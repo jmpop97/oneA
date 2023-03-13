@@ -18,8 +18,32 @@ vi <파일명> : <파일명>을 vi 편집기로 편집하겠다
 	:w    			입력한 내용을 저장하는 방법 : (입력 모드에서 빠져나온 뒤) 
 	:q    		vi 편집기 닫기: 
 	:wq			저장후 닫기
-
+	:set nu		숫자 안보이게하기
 	한 칸 띄우고 저장하는 이유는 무엇일까요? - 명령창 끝 인식
+	: undo		(참고) 입력모드를 빠져나온 뒤 u (변경사항 취소)
 
 cat <파일명>   : <파일명> 내용 띄우기
 
+git init 			저장소 만들기
+
+git status 			다이렉토리 확인
+
+git add <파일명> 		git에 올리기
+
+git rm --cacheo <file> 	<file> 삭제
+
+git add .			현재 경로에 있는 모든 파일을 스테이지에 추가할거다
+git commit			커밋 메시지 저장
+git commit -m "creat a.txt"	"" 메시지 만들기 
+git commit -message "creat a.txt"	a.txt으로 메시지 만들기 
+
+git log 지금까지 만든 로그 보기 (나오는 순서 위쪽이 최신)
+
+추가 심화학습하고 싶으시다면 인프런 로그인할때 사용하는 "이메일”을 tegongkang@gmail.com으로 보내주세요.
+
+참고로 윈도우환경 복사는 ctrl+ ins
+붙여넣기는 shift+ins
+
+
+git에있는것 받아오기
+git clone url    url내용으로 복사됨
