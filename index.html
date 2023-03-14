@@ -19,7 +19,7 @@
     }
     /*모달 창 바깥부분 */
     input[id="popup"] +label +div{
-        display: none;
+        opacity: 0;; visibility: hidden;transition: all 1s;
         position:fixed;
         top:0;
         left:0;
@@ -29,7 +29,7 @@
     }
     /*모달 창 바깥부분 클릭 시 닫힘*/
     input[id="popup"]:checked +label +div{
-        display: block;
+        opacity: 1;visibility: visible;
     }
     /*주 컨텐츠 공간*/
     input[id="popup"] +label +div > div{
@@ -90,7 +90,7 @@
          margin-left: 50px;
          padding-top: 20px;
      }
-         /*popup1은 수정/삭제 모달기능*/
+    /*popup1은 수정/삭제 모달기능*/
     /*버튼 사용 전에는 등장 x */
     input[id="popup1"] {
         display: none;
@@ -104,7 +104,7 @@
     }
     /*모달 창 바깥부분 */
     input[id="popup1"] +label +div{
-        display: none;
+        opacity: 0;; visibility: hidden;transition: all 1s;
         position:fixed;
         top:0;
         left:0;
@@ -114,7 +114,7 @@
     }
     /*모달 창 바깥부분 클릭 시 닫힘*/
     input[id="popup1"]:checked +label +div{
-        display: block;
+        opacity: 1;visibility: visible;
     }
     /*주 컨텐츠 공간*/
     input[id="popup1"] +label +div > div{
