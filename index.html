@@ -19,7 +19,7 @@
     }
     /*모달 창 바깥부분 */
     input[id="popup"] +label +div{
-        opacity: 0;; visibility: hidden;transition: all 1s;
+        opacity: 0;; visibility: hidden;transition: all 0.3s;
         position:fixed;
         top:0;
         left:0;
@@ -34,11 +34,14 @@
     /*주 컨텐츠 공간*/
     input[id="popup"] +label +div > div{
         position: absolute;
+        overflow: scroll;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
-        width: 850px;
-        height:900px;
+        width: 85%;
+        max-width: 850px;
+        height: 85%;
+        max-height:900px;
         background-color:white;
         z-index: 2;
     }
@@ -49,7 +52,7 @@
          right: 0%;
          transform: translate(40%, -40%);
          padding: 20px;
-         background-color: red;
+         background:rgba(219,8,28,.75);
          border-radius: 100%;
          z-index: 1;
      }
@@ -74,18 +77,22 @@
          height: 100px;
          width: 150px;
          padding-left: 10px;
-         margin-left: 33px;
+         margin-left: 35px;
      }
      .img_btn{
          height: 50px;
          width: 70px;
-         padding-left: 100px;
+         padding-left: 50px;
          margin-top: 20px;
      }
      .check_box{
+         overflow: scroll;
+         position: fixed;
          /*background-color:silver;*/
-         width: 750px;
-         height: 530px;
+         width: 75%;
+         max-width: 750px;
+         height: 75%;
+         max-height: 355px;
          margin-top: 80px;
          margin-left: 50px;
          padding-top: 20px;
@@ -104,7 +111,7 @@
     }
     /*모달 창 바깥부분 */
     input[id="popup1"] +label +div{
-        opacity: 0;; visibility: hidden;transition: all 1s;
+        opacity: 0; visibility: hidden;transition: all 0.3s;
         position:fixed;
         top:0;
         left:0;
@@ -119,11 +126,14 @@
     /*주 컨텐츠 공간*/
     input[id="popup1"] +label +div > div{
         position: absolute;
+        overflow: scroll;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
-        width: 850px;
-        height:900px;
+        width: 85%;
+        max-width: 850px;
+        height: 85%;
+        max-height:900px;
         background-color:white;
         z-index: 2;
     }
@@ -134,7 +144,7 @@
          right: 0%;
          transform: translate(40%, -40%);
          padding: 20px;
-         background-color: red;
+         background:rgba(219,8,28,.75);
          border-radius: 100%;
          z-index: 1;
      }
@@ -160,22 +170,25 @@
          height: 100px;
          width: 150px;
          padding-left: 10px;
-         margin-left: 33px;
+         margin-left: 35px;
      }
      .img_btn1{
          height: 50px;
          width: 70px;
-         padding-left: 100px;
+         padding-left: 50px;
          margin-top: 20px;
      }
      .check_box1{
+         overflow: scroll;
+         position: fixed;
          /*background-color:silver;*/
-         width: 750px;
-         height: 530px;
+         width: 75%;
+         max-width: 750px;
+         height: 75%;
+         max-height: 355px;
          margin-top: 80px;
          margin-left: 50px;
          padding-top: 20px;
-
      }
 
 </style>
@@ -189,7 +202,7 @@
         <div>
             <div>
 <!--팝업 닫기 버튼                -->
-                <label for="popup"></label>
+                <label for="popup">❌</label>
 <!--주요 내용-->
                 <h3 style="margin-left: 10%;">이미지 등록</h3>
                 <div class="img_box">
@@ -197,18 +210,18 @@
                          stlye="" width="100%" ,height=auto">
                 </div>
                     <div class="img_url">
-                        <input type="text" placeholder="url을 넣어주세요" style="width: 250px;height: 50px; margin: 5px;">
+                        <input type="text" placeholder="url을 넣어주세요" style=" width: 200px;height: 50px; margin: 15px;">
                     </div>
                     <div class="img_url img_btn">
                         <button>등록하기</button>
                     </div>
 <!--정보입력구역                -->
                 <div class="check_box">
-                    이름: <input type="text" name="m_name" style="width: 150px; height: 30px; margin-bottom:10px;"><br>
-                    MBTI:<input type="text" name="m_mbti" style="width: 150px; height: 30px; margin-bottom: 10px;"><br>
-                    역할: <input type="text" name="m_role" style="width: 190px; height: 30px; margin-bottom:10px;"><br>
-                    주소: <input type="text" name="m_adress" style="width: 300px; height: 30px; margin-bottom:10px;"><br>
-                    자기소개:<br><textarea style="width:700px; height: 280px; border-radius: 7px;"></textarea><br>
+                    이름: <input type="text" name="m_name" style="max-width: 130px; max-height: 30px; margin-bottom:10px;"><br>
+                    MBTI:<input type="text" name="m_mbti" style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
+                    역할: <input type="text" name="m_role" style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
+                    주소: <input type="text" name="m_adress" style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
+                    자기소개:<br><textarea style="width:90%; max-width: 700px; height:75%; max-height:100px; border-radius: 7px;"></textarea><br>
                     <button style="width:70px; height: 40px; margin-right: 50%; float:right;">등록하기</button>
                 </div>
             </div>
@@ -223,7 +236,7 @@
         <div>
             <div>
 <!--수정, 삭제 팝업 닫기버튼                -->
-                <label for="popup1"></label>
+                <label for="popup1">❌</label>
 <!--수정, 삭제 주요 내용-->
                 <h3 style="margin-left: 10%;">이미지 등록</h3>
                 <div class="img_box1">
@@ -231,20 +244,22 @@
                          stlye="" width="100%" ,height=auto">
                 </div>
                     <div class="img_url1">
-                        <input type="text" placeholder="url을 넣어주세요" style="width: 250px;height: 50px; margin: 5px;">
+                        <input type="text" placeholder="url을 넣어주세요" style="width: 200px;height: 50px; margin: 15px;">
                     </div>
                     <div class="img_url1 img_btn1">
                         <button>등록하기</button>
                     </div>
 <!--수정, 삭제 정보입력구역                -->
                 <div class="check_box1">
-                    이름: <input type="text" name="m_name" style="width: 150px; height: 30px; margin-bottom:10px;"><br>
-                    MBTI:<input type="text" name="m_mbti" style="width: 150px; height: 30px; margin-bottom: 10px;"><br>
-                    역할: <input type="text" name="m_role" style="width: 190px; height: 30px; margin-bottom:10px;"><br>
-                    주소: <input type="text" name="m_adress" style="width: 300px; height: 30px; margin-bottom:10px;"><br>
-                    자기소개:<br><textarea style="width:700px; height: 280px; border-radius: 7px;"></textarea><br>
+                    이름: <input type="text" name="m_name" value="정찬호"style="max-width: 150px; max-height: 30px; margin-bottom:10px;"><br>
+                    MBTI:<input type="text" name="m_mbti" value="INFJ"style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
+                    역할: <input type="text" name="m_role" value="모달"style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
+                    주소: <input type="text" name="m_adress" value="양산시~~"style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
+                    자기소개:<br><textarea style="width:90%; max-width: 700px; height:75%; max-height:100px;border-radius: 7px;">27살 남자, 아직 실력은 부족하지만 열심히 하고자 합니다</textarea><br>
+                   <div style="padding: 10px;">
                     <button style="width:70px; height: 40px; margin-right: 55%; float:right;">수정하기</button>
                     <button style="width:70px; height: 40px; margin-right: 35%; margin-top: -41px; float:right;">삭제하기</button>
+                    </div>
                 </div>
             </div>
 <!--수정, 삭제 검은 부분 클릭 시 닫기기능            -->
