@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify
 from bson import json_util
 from bson import ObjectId
@@ -5,7 +6,7 @@ app = Flask(__name__)
 
 
 
-from pymongo import MongoClient
+
 client = MongoClient('mongodb+srv://oneB:oneB@onea.ojn8ull.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 # 메인 페이지
