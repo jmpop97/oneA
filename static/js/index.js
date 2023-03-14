@@ -1,9 +1,10 @@
+
 function save_member() {
-    let m_name = "이름"
-    let m_mbti = "mbti"
-    let m_role = "역할"
-    let m_address = "주소"
-    let m_comment = "소개"
+    let m_name = "ㄷ"
+    let m_mbti = "ㄷ"
+    let m_role = "ㄷ"
+    let m_address = "ㄷ"
+    let m_comment = "ㄷ"
 
     let formData = new FormData();
     formData.append("m_name_give", m_name);
@@ -14,10 +15,10 @@ function save_member() {
     alert('hi')
 
     fetch('/member', { method: "POST", body: formData, })
-    .then((res) => res.json())
-    .then((data) => {
-        alert(data['msg']);
-    });
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data['msg']);
+        });
 }
 
 function update_member() {
@@ -51,10 +52,11 @@ function delete_member() {
     })
 }
 function read_members() {
-    
+
     fetch('/members').then((res) => res.json()).then((data) => {
         let rows = data['result']
-        rows.forEach((a)=>{
+        var test=rows
+        rows.forEach((a) => {
             console.log(a)
             let name = a['m_name']
             let mbti = a['m_mbti']
@@ -71,7 +73,35 @@ function read_members() {
             //                 </tr>`       
             // $('#order-box').append(temp_html)
         })
-    
-})
+
+    })
+}
+function read_name_member(){
+    fetch('/members').then((res) => res.json()).then((data) => {
+        let rows = data['result']
+        rows.forEach((a) => {
+
+            let name = a['m_name']
+            let mbti = a['m_mbti']
+            let role = a['m_role']
+            let address = a['m_address']
+            let comment = a['m_comment']
+
+            // let temp_html = `<tr>
+            //                     <td>${name}</td>
+            //                     <td>${mbti}</td>
+            //                     <td>${role}</td>
+            //                     <td>${address}</td>
+            //                     <td>${comment}</td>
+            //                 </tr>`       
+            // $('#order-box').append(temp_html)
+        })
+        console.log(rows)
+
+        rows.sort(function compare(a, b) {
+            return a.m_name - b.m_name;
+          });
+        console.log(rows)
+    })
 }
 
