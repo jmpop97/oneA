@@ -18,10 +18,14 @@ header {
 #page-logo a {
     padding: 10px;
     font-family: "Oleo Script", sans-serif;
+<<<<<<< Updated upstream
     color: rgb(245, 243, 160);
+=======
+    color: #072A40;
+>>>>>>> Stashed changes
     font-size: 5rem;
     text-decoration: none;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    text-shadow: 1px 1px 20px rgb(0, 0, 0);
 }
 
 ul {
@@ -39,7 +43,28 @@ div p {
     font-weight: bolder;
 }
 
+<<<<<<< Updated upstream
 section img {
+=======
+.intro {
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    background-color: #178CA4;
+}
+
+.intro div {
+    padding: 1rem 1.5rem;
+}
+
+.intro p {
+    font-size: 1.3rem;
+}
+
+.intro img {
+>>>>>>> Stashed changes
     width: 300px;
     height: 280px;
     object-fit: cover;
@@ -73,7 +98,7 @@ hr:after {
     margin: 2rem;
     margin-top: 0;
     padding: 1.5rem;
-    background-color: white;
+    background-color: #18B7BE;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     overflow: hidden;

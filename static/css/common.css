@@ -3,6 +3,8 @@
 * {
     margin: 0;
     padding: 0;
+
+    background-color: #F9F7F0;
 }
 
 #wrap {
@@ -28,6 +30,11 @@
     background-color: #bcaaa4;
 }
 
+#content2-wrap {
+    width: 100%;
+    background-color: #178CA4;
+}
+
 #footer-wrap {
     width: 100%;
     background-color: #d7ccc8;
@@ -46,23 +53,40 @@
 }
 
 .content-container {
-    width: 1000px;
     margin: 0 auto;
 
     display: flex;
     background-color: #4e342e;
 }
 
-.content2-container {
-    width: 1000px;
-    margin: 0 auto;
-    background-color: #5d4037;
+.content2-container { 
+    
 }
-.footer-container {width: 1000px; height: 100px; line-height: 100px; margin: 0 auto; background-color: #6d4c41;}
 
-.card {
+#card-list {
+    background-color: #178CA4;    
+}
+
+#mainpage2 {
+    background-color: #18B7BE;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 1000px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    background-color: #6d4c41;
+}
+
+.col {
     width: 320px;
     height: 450px;
+
+    background-color: #178CA4;   
 }
 
 .card-img-top {
@@ -81,6 +105,8 @@
     margin: 0 auto;
     width: 300px;
     height: 150px;
+
+    display:block;
 }
 
 .card-body2 {
@@ -94,23 +120,38 @@
 }
 
 .card-title {
-    height: 30px;
+    height: 40px;
+    color: #F9F7F0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #072A40;
+
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .card-text {
-    color: black;
+    color: #F9F7F0;
+    background-color: #18B7BE;
+
     width: 250px;
     height: 70px;
     font-size: 20px;
     overflow: hidden;
     word-wrap: break-word;
-    white-space: narmal;
+    white-space: normal;
     line-height: 1.2;
     text-align: center;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -125,7 +166,6 @@
 .btn3 {
     padding: 15px 100px;
     margin: 10px 4px;
-    color: black;
     font-family: sans-serif;
     text-transform: uppercase;
     text-align: center;
