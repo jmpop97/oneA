@@ -55,7 +55,7 @@ function read_members() {
 
     fetch('/members').then((res) => res.json()).then((data) => {
         let rows = data['result']
-        var test=rows
+        var test = rows
         rows.forEach((a) => {
             console.log(a)
             let name = a['m_name']
@@ -76,11 +76,25 @@ function read_members() {
 
     })
 }
-function read_name_member(){
+function read_name_member() {
     fetch('/members').then((res) => res.json()).then((data) => {
         let rows = data['result']
-        rows.forEach((a) => {
 
+        console.log(rows)
+        console.log(rows[0])
+        //a.(순서로 정할 값)
+        rows.sort(function (a, b) {
+            if (a.m_name > b.m_name) {
+                return 1;
+            }
+            if (a.m_name < b.m_name) {
+                return -1;
+            }
+            // a must be equal to b
+            return 0;
+        });
+        console.log(rows)
+        rows.forEach((a) => {            
             let name = a['m_name']
             let mbti = a['m_mbti']
             let role = a['m_role']
@@ -96,12 +110,6 @@ function read_name_member(){
             //                 </tr>`       
             // $('#order-box').append(temp_html)
         })
-        console.log(rows)
-
-        rows.sort(function compare(a, b) {
-            return a.m_name - b.m_name;
-          });
-        console.log(rows)
     })
 }
 
