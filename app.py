@@ -30,7 +30,7 @@ def create_member():
     return jsonify({'msg':'저장완료!'})
 
 # member update 
-@app.route('/update_member',methods=["POST"])
+@app.route('/update_member', methods=["POST"])
 def update_member():
     id_receive = request.form['m_id_give']
     m_name_receive = request.form['m_name_give']
@@ -49,7 +49,7 @@ def update_member():
     return jsonify({'msg':'수정완료!'})
 
 # member delet
-@app.route('/delete_member',methods=["DELETE"])
+@app.route('/delete_member', methods=["DELETE"])
 def delete_member():
     id_receive = request.form['m_id_give']
     db.member_info.delete_one({'_id':ObjectId(id_receive)})

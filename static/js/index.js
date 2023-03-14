@@ -46,4 +46,6 @@ function delete_member() {
         alert(data['msg']);
     })
 }
-
+function read_member() {
+    
+}
