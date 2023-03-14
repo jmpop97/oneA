@@ -50,9 +50,28 @@ function delete_member() {
         alert(data['msg']);
     })
 }
-function read_member() {
-    console.log("read_member work")
+function read_members() {
+    
+    fetch('/members').then((res) => res.json()).then((data) => {
+        let rows = data['result']
+        rows.forEach((a)=>{
+            console.log(a)
+            let name = a['m_name']
+            let mbti = a['m_mbti']
+            let role = a['m_role']
+            let address = a['m_address']
+            let comment = a['m_comment']
 
-
+            // let temp_html = `<tr>
+            //                     <td>${name}</td>
+            //                     <td>${mbti}</td>
+            //                     <td>${role}</td>
+            //                     <td>${address}</td>
+            //                     <td>${comment}</td>
+            //                 </tr>`       
+            // $('#order-box').append(temp_html)
+        })
+    
+})
 }
 

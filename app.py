@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from bson import json_util
 from bson import ObjectId
 app = Flask(__name__)
 
@@ -11,6 +12,11 @@ db = client.dbsparta
 @app.route('/')
 def main():
     return render_template('index.html')
+# member read
+@app.route('/members',methods=["GET"])
+def read_members():
+    allmembers_data = list(db.member_info.find({}))
+    return json_util.dumps({'result':allmembers_data})
 
 # member create
 @app.route('/member', methods=["POST"])
