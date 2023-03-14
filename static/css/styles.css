@@ -1,13 +1,15 @@
 body {
     font-family: "Quicksand", sans-serif;
     margin: 0;
-    background-color: rgb(197, 249, 255);
+    background-color: rgb(249, 250, 250);
+    background: linear-gradient(180deg, rgb(249, 250, 250), rgb(230, 230, 230));
+    color: rgb(32, 48, 60);
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     padding: 15px 60px;
     top: 0;
     left: 0;
@@ -18,32 +20,39 @@ header {
 #page-logo a {
     padding: 10px;
     font-family: "Oleo Script", sans-serif;
-    color: rgb(245, 243, 160);
+    color: #20303c;
     font-size: 5rem;
     text-decoration: none;
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#page-logo {
+    transition: transform 1s ease-in-out;
 }
 
-div p {
-    margin: 1rem 3rem;
-    margin-right: 0.3rem;
-    /* 나중에 정리 */
-    padding: 0;
-    font-size: 1.5rem;
-    font-weight: bolder;
+#page-logo:hover {
+    transform: scale(1.5);
 }
 
-section img {
+.intro {
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.intro div {
+    padding: 1rem 1.5rem;
+}
+
+.intro p {
+    font-size: 1.3rem;
+}
+
+.intro img {
     width: 300px;
     height: 280px;
     object-fit: cover;
-    margin-right: 3rem;
 }
 
 hr {
@@ -60,14 +69,14 @@ hr:after {
     background: #fff;
     padding: 0 4px;
     position: relative;
-    
 }
 
-.intro {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 
 #mainpage {
     margin: 2rem;
