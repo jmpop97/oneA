@@ -1,4 +1,4 @@
-
+read_cards()
 function save_member() {
     let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
     let m_name = "ㄷ"
@@ -117,7 +117,7 @@ function read_name_member() {
 
 function read_cards() {
 
-    fetch('/members').then((res) => res.json()).then((data) => {
+    fetch('/members2').then((res) => res.json()).then((data) => {
         let rows = data['result']
         console.log(rows)
         // document.getElementById('cards-box').empty()
