@@ -1,13 +1,14 @@
 from pymongo import MongoClient
+import certifi
 from flask import Flask, render_template, request, jsonify
 from bson import json_util
 from bson import ObjectId
 app = Flask(__name__)
 
 
+ca = certifi.where()
 
-
-client = MongoClient('mongodb+srv://oneB:oneB@onea.ojn8ull.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://oneB:oneB@onea.ojn8ull.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.dbsparta
 # 메인 페이지
 @app.route('/')
@@ -39,12 +40,14 @@ def read_member(id):
 # member create
 @app.route('/member', methods=["POST"])
 def create_member():
+    m_img_receive = request.form['m_img_give']
     m_name_receive = request.form['m_name_give']
     m_mbti_receive = request.form['m_mbti_give']
     m_role_receive = request.form['m_role_give']
     m_address_receive = request.form['m_address_give']
     m_comment_receive = request.form['m_comment_give']
-    doc ={'m_name': m_name_receive,
+    doc ={'m_img': m_img_receive,
+          'm_name': m_name_receive,
           'm_mbti' : m_mbti_receive,
           'm_role' : m_role_receive,
           'm_address' : m_address_receive,
@@ -57,12 +60,14 @@ def create_member():
 @app.route('/member',methods=["PUT"])
 def update_member():
     id_receive = request.form['m_id_give']
+    m_img_receive = request.form['m_img_give']
     m_name_receive = request.form['m_name_give']
     m_mbti_receive = request.form['m_mbti_give']
     m_role_receive = request.form['m_role_give']
     m_address_receive = request.form['m_address_give']
     m_comment_receive = request.form['m_comment_give']
-    doc ={'m_name': m_name_receive,
+    doc ={'m_img': m_img_receive,
+          'm_name': m_name_receive,
           'm_mbti' : m_mbti_receive,
           'm_role' : m_role_receive,
           'm_address' : m_address_receive,
