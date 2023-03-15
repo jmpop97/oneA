@@ -145,149 +145,157 @@ function read_cards() {
             let name = a['m_name']
             let comment = a['m_comment']
             // console.log(image, name, comment)
-            let temp_html = `<div class="col">
-                                <div class="card">
-                                    <img
-                                    src="${image}"
-                                    class="card-img-top" alt="..."/>
-                                <div class="card-body">
-                                    <p class="card-title">${name}</p>
-                                    <p class="card-text">${comment}</p>
-                                </div>
-                                </div>
-                            </div>`
+            let temp_html = `<button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div class="card">
+              <img
+                src="${image}"
+                class="card-img-top" alt="..." />
+              <div class="card-body">
+                <p class="card-title">${name}</p>
+                <p class="card-text">${comment}</p>
+              </div>
+            </div>
+          </button>`
 
 //             $('#cards-box').append(temp_html)
               document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
         })
 
         // console.log("+card")
-        let temp_html = `<div class="col">
-                            <div class="card">
-                            <!-- 모달 트리거 생성하기 시작 -->
-                            <div class="card-body2">
-                                <button
-                                type="button"
-                                class="btn btn-outline-danger"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
-                                style="width: 300px; height: 450px; font-size: 150px"
-                                >
-                                +
-                                </button>
+        let temp_html = `<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel1">
+                자기소개
+              </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- 이미지등록 -->
+            <div class="modal-body">
+              <h3 style="margin-left: 8%">이미지 등록</h3>
+              <!-- 정보입력 -->
+              <form action="/" method="GET">
+                <div>
+                  <div class="img_box1">
+                    <img id="u_url"
+                      src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                  </div>
+                  <div class="img_url1">
+                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                    <button id="u_img_btn" style="width: 90px">
+                      등록하기
+                    </button>
+                  </div>
+                </div>
+                <ul class="check_box">
+                  <li>
+                    <label for="u_name">이름</label>
+                    <input type="text" id="u_name" name="m_name" />
+                  </li>
+                  <li>
+                    <label for="u_mbti">MBTI</label>
+                    <input type="text" id="u_mbti" name="m_mbti" />
+                  </li>
+                  <li>
+                    <label for="u_role">역할</label>
+                    <input type="text" id="u_role" name="m_role" />
+                  </li>
+                  <li>
+                    <label for="u_address">사는 지역</label>
+                    <input type="text" id="u_address" name="m_address" />
+                  </li>
+                  <li>
+                    <label for="u_comment">자기소개</label>
+                    <textarea id="u_comment"></textarea>
+                  </li>
+                </ul>
+                <div id="ud-btn">
+                  <button id="u_btn">수정하기</button>
+                  <button id="d_btn">삭제하기</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                                <!-- 헤드부분 -->
-                                <div
-                                class="modal fade"
-                                id="exampleModal"
-                                tabindex="-1"
-                                aria-labelledby="exampleModalLabel"
-                                aria-hidden="true"
-                                >
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2
-                                        class="modal-title fs-5"
-                                        id="exampleModalLabel"
-                                        >
-                                        자기 소개
-                                        </h2>
-                                        <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                        ></button>
-                                    </div>
+      <div class="col">
+        <div class="card">
+          <!-- 모달 트리거 생성하기 시작 -->
+          <div class="card-body2">
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" style="width: 300px; height: 450px; font-size: 150px">
+              +
+            </button>
 
-                                    <!-- 이미지 등록 -->
-                                    <div class="modal-body">
-                                        <div class="user_wrap">
-                                        <h2 style="margin-left: 8%">이미지 등록</h2>
-                                        <div>
-                                            <div class="img_box">
-                                            <img
-                                                id="s_url"
-                                                src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-                                                width="100%"
-                                                ,
-                                                height="auto"
-                                            />
-                                            </div>
-                                            <div class="img_url">
-                                            <input
-                                                type="text"
-                                                id="s_img"
-                                                placeholder="url을 넣어주세요"
-                                                style="width: 300px"
-                                            />
-                                            <button id="s_img_btn">등록하기</button>
-                                            </div>
-                                        </div>
-
-                                        <!-- 정보입력 -->
-                                        <form action="/" method="POST">
-                                            <div class="check_box">
-                                            <ul>
-                                                <li>
-                                                <label for="s_name">이름</label>
-                                                <input
-                                                    type="text"
-                                                    id="s_name"
-                                                    name="m_name"
-                                                />
-                                                </li>
-                                                <li>
-                                                <label for="s_mbti">MBTI</label>
-                                                <input
-                                                    type="text"
-                                                    id="s_mbti"
-                                                    name="m_mbti"
-                                                />
-                                                </li>
-                                                <li>
-                                                <label for="s_role">역할</label>
-                                                <input
-                                                    type="text"
-                                                    id="s_role"
-                                                    name="m_role"
-                                                />
-                                                </li>
-                                                <li>
-                                                <label for="s_address">사는 지역</label>
-                                                <input
-                                                    type="text"
-                                                    id="s_address"
-                                                    name="m_address"
-                                                />
-                                                </li>
-                                                <li>
-                                                <label for="s_comment">자기소개</label>
-                                                <textarea id="s_comment"></textarea>
-                                                </li>
-                                                <button id="s_btn">등록하기</button>
-                                            </ul>
-                                            </div>
-                                        </form>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-
-                            <!-- 수정, 삭제하기 -->
-
-                            
+            <!-- 헤드부분 -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">
+                      자기 소개
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
 
 
+                  <!-- 이미지 등록 -->
+                  <div class="modal-body">
+                    <div class="user_wrap">
+                      <h2 style="margin-left: 8%">이미지 등록</h2>
 
+                      <!-- 정보입력 -->
+                      <form action="/" method="POST">
+                        <div>
+                          <div class="img_box">
+                            <img id="s_url"
+                              src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                          </div>
+                          <div class="img_url">
+                            <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                            <button id="s_img_btn">등록하기</button>
+                          </div>
+                        </div>
+                        <div class="check_box">
+                          <ul>
+                            <li>
+                              <label for="s_name">이름</label>
+                              <input type="text" id="s_name" name="m_name" />
+                            </li>
+                            <li>
+                              <label for="s_mbti">MBTI</label>
+                              <input type="text" id="s_mbti" name="m_mbti" />
+                            </li>
+                            <li>
+                              <label for="s_role">역할</label>
+                              <input type="text" id="s_role" name="m_role" />
+                            </li>
+                            <li>
+                              <label for="s_address">사는 지역</label>
+                              <input type="text" id="s_address" name="m_address" />
+                            </li>
+                            <li>
+                              <label for="s_comment">자기소개</label>
+                              <textarea id="s_comment"></textarea>
+                            </li>
+                            <button id="s_btn">등록하기</button>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-
-                            </div>
-                        </div>`
+          <!-- 수정, 삭제하기 -->
+        </div>
+      </div>`
         document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
     })
 }
