@@ -110,3 +110,7 @@ function read_name_member() {
     })
 }
 
+function moveToTop() {
+    document.body.scrollIntoView({ behavior: "smooth" });
+  };
+
