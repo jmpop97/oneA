@@ -21,6 +21,8 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../static/css/common.css" />
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="../static/js/june.js"></script>
 
   <!-- 정찬호 -->
   <link rel="stylesheet" href="../static/css/modal.css" />
@@ -108,28 +110,6 @@
               </div>
             </div>
           </button>
-          <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-            <div class="card">
-              <img
-                src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
-                class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-title">다오</p>
-                <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
-              </div>
-            </div>
-          </button>
-          <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-            <div class="card">
-              <img
-                src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
-                class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-title">다오</p>
-                <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
-              </div>
-            </div>
-          </button>
           <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -171,8 +151,8 @@
                         <input type="text" id="u_role" name="m_role" />
                       </li>
                       <li>
-                        <label for="u_address">사는 지역</label>
-                        <input type="text" id="u_address" name="m_address" />
+                        <label for="s_address">주소</label>
+                          <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly />
                       </li>
                       <li>
                         <label for="u_comment">자기소개</label>
@@ -243,8 +223,9 @@
                                   <input type="text" id="s_role" name="m_role" />
                                 </li>
                                 <li>
-                                  <label for="s_address">사는 지역</label>
-                                  <input type="text" id="s_address" name="m_address" />
+                                  <label for="s_address">주소</label>
+                                    <input type="text" id="s_address2" name="m_address" onclick="addressAPI2()" readonly />
+
                                 </li>
                                 <li>
                                   <label for="s_comment">자기소개</label>
