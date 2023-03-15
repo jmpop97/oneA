@@ -10,9 +10,6 @@ form {
   width: 900px;
   height: 800px;
 }
-.user_wrap {
-  /* background-color: black; */
-}
 .img_box {
   /* background-color: green; */
   position: relative;
@@ -78,7 +75,7 @@ form {
   height: 75%;
   max-height: 100px;
   border-radius: 7px;
-  resize:none;
+  resize: none;
 }
 
 #s_btn {
