@@ -19,7 +19,9 @@
 
 .col {
   width: 320px;
-  height: 450px; 
+  height: 450px;
+  border: none;
+  background-color: transparent;
 }
 
 .card-img-top {
