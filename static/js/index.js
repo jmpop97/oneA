@@ -279,4 +279,3 @@ function read_cards() {
 function moveToTop() {
     document.body.scrollIntoView({ behavior: "smooth" });
   };
-
