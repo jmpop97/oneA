@@ -1,18 +1,16 @@
 @charset "utf-8";
 
+
 /* 자식이 height 값을 가지고 있으면 부모의 height 값은 없어도 된다.
            width: 100%는 기본 값이기 때문에 없어도 된다.       
            마우스 가까이 가면 왼쪽은 블로그가기 오른쪽은 상세보기
            오른쪽은 항상 + 빈박스
         */
-.header-container {
-  width: 1000px;
-  height: 100px;
-  margin: 0 auto;
-}
+
 
 .content-container {
   margin: 0 auto;
+
 
   display: flex;
   background-color: #4e342e;
@@ -25,6 +23,7 @@
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   overflow: hidden;    
+
 }
 
 .footer-container {

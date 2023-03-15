@@ -64,6 +64,9 @@ function read_members() {
             let address = a['m_address']
             let comment = a['m_comment']
 
+            let temp_html=`<div class="footer-container">${name}</div>`
+            document.getElementById('page-logo').append(temp_html)
+
             // let temp_html = `<tr>
             //                     <td>${name}</td>
             //                     <td>${mbti}</td>
@@ -76,24 +79,26 @@ function read_members() {
 
     })
 }
+
+function read_member() {
+    let m_id = "640fbe71b2928d8e1218f8f2"
+    console.log(m_id)
+    fetch_id='/member/'+m_id;
+    fetch(fetch_id).then((res) => res.json()).then((data) => {
+        let rows = data
+        console.log(rows)
+
+        
+
+    })
+}
+
 function read_name_member() {
-    fetch('/members').then((res) => res.json()).then((data) => {
+    fetch('/membersname').then((res) => res.json()).then((data) => {
         let rows = data['result']
 
         console.log(rows)
-        console.log(rows[0])
-        //a.(순서로 정할 값)
-        rows.sort(function (a, b) {
-            if (a.m_name > b.m_name) {
-                return 1;
-            }
-            if (a.m_name < b.m_name) {
-                return -1;
-            }
-            // a must be equal to b
-            return 0;
-        });
-        console.log(rows)
+
         rows.forEach((a) => {            
             let name = a['m_name']
             let mbti = a['m_mbti']
@@ -101,18 +106,7 @@ function read_name_member() {
             let address = a['m_address']
             let comment = a['m_comment']
 
-            // let temp_html = `<tr>
-            //                     <td>${name}</td>
-            //                     <td>${mbti}</td>
-            //                     <td>${role}</td>
-            //                     <td>${address}</td>
-            //                     <td>${comment}</td>
-            //                 </tr>`       
-            // $('#order-box').append(temp_html)
         })
     })
 }
 
-let moveToTop = function () {
-    document.body.scrollIntoView({ behavior: "smooth" });
-  };
