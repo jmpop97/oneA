@@ -11,9 +11,7 @@ db = client.dbsparta
 @app.route('/')
 def main():
     return render_template('index.html')
-
 # member read
-
 @app.route('/members',methods=["GET"])
 def read_members():
     allmembers_data = list(db.member_info.find({}))
@@ -33,6 +31,7 @@ def read_member(id):
     print(id_receive)
     member_data = list(db.member_info.find({'_id':ObjectId(id_receive)}))
     return json_util.dumps({'result':member_data})
+
 
 # member create
 @app.route('/member', methods=["POST"])

@@ -6,13 +6,15 @@ form {
   color: rgb(32, 48, 60);
 }
 
+.modal-dialog {
+  margin: 5rem 10rem 5rem 30rem;
+}
+
 .modal-content {
   width: 900px;
   height: 800px;
 }
-.user_wrap {
-  /* background-color: black; */
-}
+
 .img_box {
   /* background-color: green; */
   position: relative;
@@ -27,6 +29,7 @@ form {
   height: 100%;
   object-fit: cover;
 }
+
 .img_url {
   /* background-color: aquamarine; */
   display: inline;
@@ -48,30 +51,35 @@ form {
   padding-top: 10px;
 }
 
-#s_name {
+#s_name,
+#u_name {
   max-width: 130px;
   max-height: 30px;
   margin-bottom: 10px;
 }
 
-#s_mbti {
+#s_mbti,
+#u_mbti {
   max-width: 150px;
   max-height: 30px;
   margin-bottom: 10px;
 }
 
-#s_role {
+#s_role,
+#u_role {
   max-width: 190px;
   max-height: 30px;
   margin-bottom: 10px;
 }
 
-#s_address {
+#s_address,
+#u_address {
   max-width: 300px;
   max-height: 30px;
   margin-bottom: 10px;
 }
 
+#s_comment,
 #s_comment {
   width: 90%;
   max-width: 450px;
@@ -91,15 +99,33 @@ form {
   background-color: white;
 }
 
+#u_btn {
+  margin-left: 14rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+}
+
+#d_btn {
+  margin-right: 20rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+}
+
+#ud-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 /* 생성하기 그룹 */
 /* 수정,삭제하기 css*/
 .modal-content1 {
   width: 900px;
   height: 800px;
 }
-.user_wrap1 {
-  /* background-color: black; */
-}
+
 .img_box1 {
   /* background-color: green; */
   position: relative;
