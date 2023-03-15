@@ -63,8 +63,10 @@ function read_members() {
             let role = a['m_role']
             let address = a['m_address']
             let comment = a['m_comment']
+
             let temp_html=`<div class="footer-container">${name}</div>`
             document.getElementById('page-logo').append(temp_html)
+
             // let temp_html = `<tr>
             //                     <td>${name}</td>
             //                     <td>${mbti}</td>
@@ -77,6 +79,7 @@ function read_members() {
 
     })
 }
+
 function read_member() {
     let m_id = "640fbe71b2928d8e1218f8f2"
     console.log(m_id)
@@ -106,3 +109,4 @@ function read_name_member() {
         })
     })
 }
+

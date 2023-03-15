@@ -1,110 +1,126 @@
 @charset "utf-8";
 
-#content-wrap {
-    width: 100%;
-    background-color: #ffae94;
-}
-
-#footer-wrap {
-    width: 100%;
-    background-color: #ff4400;
-}
 
 /* 자식이 height 값을 가지고 있으면 부모의 height 값은 없어도 된다.
            width: 100%는 기본 값이기 때문에 없어도 된다.       
            마우스 가까이 가면 왼쪽은 블로그가기 오른쪽은 상세보기
            오른쪽은 항상 + 빈박스
         */
-.header-container {
-    width: 1000px;
-    height: 100px;
-    margin: 0 auto;
-}
+
 
 .content-container {
-    width: 1000px;
-    margin: 0 auto;
+  margin: 0 auto;
 
-    display: flex;
+
+  display: flex;
+  background-color: #4e342e;
 }
 
 .content2-container {
-    width: 1000px;
-    margin: 0 auto;
-}
-.footer-container {width: 1000px; height: 100px; line-height: 100px; margin: 0 auto; background-color: #6d4c41;}
+  width: 90%;
+  margin: 0 auto;
+  
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;    
 
-.card {
-    width: 320px;
-    height: 450px;
+}
+
+.footer-container {
+  width: 90%;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 auto;
+  background-color: #6d4c41;
+}
+
+.col {
+  width: 320px;
+  height: 450px; 
 }
 
 .card-img-top {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .card-img-top2 {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .card-body {
-    margin: 0 auto;
-    width: 300px;
-    height: 150px;
+  margin: 0 auto;
+  width: 300px;
+  height: 150px;
 }
 
 .card-body2 {
-    margin: 0 auto;
-    width: 300px;
-    height: 450px;
+  margin: 0 auto;
+  width: 300px;
+  height: 450px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-title {
-    height: 30px;
+  height: 40px;
+  color: #F9F7F0;
+  background-color: #072A40;
+  
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .card-text {
-    color: black;
-    width: 250px;
-    height: 70px;
-    font-size: 20px;
-    overflow: hidden;
-    word-wrap: break-word;
-    white-space: narmal;
-    line-height: 1.2;
-    text-align: center;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  width: 250px;
+  height: 70px;
+  color: #F9F7F0;
+  background-color: #18B7BE;
 
+  margin: 0 auto;
+  font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.2;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .wrapper {
-    margin: 150px auto;
-    text-align: center;
-    width: 100%;
-    position: relative;
+  margin: 150px auto;
+  text-align: center;
+  width: 100%;
+  position: relative;
 }
 
 .btn,
 .btn2,
 .btn3 {
-    padding: 15px 100px;
-    margin: 10px 4px;
-    color: black;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    text-decoration: none;
-    display: inline-block;
-
+  padding: 15px 100px;
+  margin: 10px 4px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
 }
