@@ -1,334 +1,257 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Introduction</title>
 
-    <!--윤찬효-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Introduction</title>
 
-    <!--이준영-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../static/css/common.css" />
+  <!--윤찬효-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/styles.css" />
 
-    <!-- 정찬호 -->
-    <link rel="stylesheet" href="../static/css/modal.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+  <!--이준영-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/css/common.css" />
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="../static/js/june.js"></script>
 
-    <!--script 종민-->
-    <script src="../static/js/index.js"></script>
-  </head>
+  <!-- 정찬호 -->
+  <link rel="stylesheet" href="../static/css/modal.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 
-  <body>
-    <header>
-      <h1 id="page-logo">one A</h1>
-    </header>
-    <main>
-      <section id="mainpage">
-        <section class="intro">
-          <!--사진-->
-          <img src="../static/images/ONEA_4.png" alt="team" />
-          <!--설명-->
-          <div id="intro-text">
-            <h2>A-1조 one A</h2>
-            <p>안녕하세요.</p>
-            <p>
-              저희 팀은 여러분들이 요리를 좋아한다고 말한 적이 없는 임의로 모인
-              팀입니다. 우리 팀은 서로 모르는 사람들이 함께 모여 새로운 경험을
-              나누고자 만들어진 조직입니다.
-            </p>
-            <p>
-              저희는 각자 서로 다른 관심사와 취미를 가지고 있지만, 새로운
-              도전으로서 많은 사람들이 함께 참여하고 있습니다.
-            </p>
-            <p>
-              함께 코딩을 하면서 서로의 지식과 기술을 공유하고, 새로운 코딩법을
-              배우며, 더 멋있는 개발을 만들기 위해 노력합니다. 저희는 서로의
-              역량을 살리면서, 새로운 경험을 나누고 성장하는 자리를 만들고자
-              합니다.
-            </p>
-            <p>
-              또한, 코딩을 통해 서로의 문화와 배경을 이해하고 존중하는 분위기를
-              유지하고 있습니다. 모두가 서로를 존중하고 배려하는 자리에서 즐겁게
-              코딩을 하고, 그 경험을 나누는 것이 저희 팀의 가치입니다.
-            </p>
-            <p>
-              이상으로, 서로 모르는 사람들이 함께 모여 새로운 경험을 나누고자
-              하는 <strong>one A</strong> 팀을 소개해드렸습니다.
-            </p>
-          </div>
-        </section>
+  <!--script 종민-->
+  <script src="../static/js/index.js"></script>
+</head>
 
+<body>
+  <header>
+    <h1 id="page-logo">one A</h1>
+  </header>
+  <main>
+    <section id="mainpage">
+      <section class="intro">
+        <!--사진-->
+        <img src="../static/images/ONEA_4.png" alt="team" />
+        <!--설명-->
+        <div id="intro-text">
+          <h2>A-1조 one A</h2>
+          <p>안녕하세요.</p>
+          <p>
+            저희 팀은 여러분들이 요리를 좋아한다고 말한 적이 없는 임의로 모인
+            팀입니다. 우리 팀은 서로 모르는 사람들이 함께 모여 새로운 경험을
+            나누고자 만들어진 조직입니다.
+          </p>
+          <p>
+            저희는 각자 서로 다른 관심사와 취미를 가지고 있지만, 새로운
+            도전으로서 많은 사람들이 함께 참여하고 있습니다.
+          </p>
+          <p>
+            함께 코딩을 하면서 서로의 지식과 기술을 공유하고, 새로운 코딩법을
+            배우며, 더 멋있는 개발을 만들기 위해 노력합니다. 저희는 서로의
+            역량을 살리면서, 새로운 경험을 나누고 성장하는 자리를 만들고자
+            합니다.
+          </p>
+          <p>
+            또한, 코딩을 통해 서로의 문화와 배경을 이해하고 존중하는 분위기를
+            유지하고 있습니다. 모두가 서로를 존중하고 배려하는 자리에서 즐겁게
+            코딩을 하고, 그 경험을 나누는 것이 저희 팀의 가치입니다.
+          </p>
+          <p>
+            이상으로, 서로 모르는 사람들이 함께 모여 새로운 경험을 나누고자
+            하는 <strong>one A</strong> 팀을 소개해드렸습니다.
+          </p>
+        </div>
       </section>
-      <!--선-->
-      <hr />
-      <!--팀원소개-->
 
-      <div class="content2-wrap">
-        <div class="content2-container">
-          <div
-            id="card-list"
-            class="row row-cols-xm-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-2"
-          >
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://i.namu.wiki/i/tP8085P4nzY3gjHUR8YmHPX-YDeNiywu6b9SON_yLHXNleJ1-nAJcWzR0LJv5h3ji4z6oCvTga391JqyoUyfBNg0Crr6GdDkNF1m_dWl-W7blWu8BBgZ_IiyAk-tSWLkmdBhsfYqPHag_jUOBEql-g.webp"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <p class="card-title">배찌</p>
-                  <p class="card-text">
-                    잠깐!!! 나 지금 엄청 배고프고, 집에 가고 싶은데... 너
-                    때문에... 모드레드... 나 화났어!!
-                  </p>
+    </section>
+    <!--선-->
+    <hr />
+    <!--팀원소개-->
+
+    <div class="content2-wrap">
+      <div class="content2-container">
+        <div id="card-list"
+          class="row row-cols-xm-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-2">
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://i.namu.wiki/i/tP8085P4nzY3gjHUR8YmHPX-YDeNiywu6b9SON_yLHXNleJ1-nAJcWzR0LJv5h3ji4z6oCvTga391JqyoUyfBNg0Crr6GdDkNF1m_dWl-W7blWu8BBgZ_IiyAk-tSWLkmdBhsfYqPHag_jUOBEql-g.webp"
+                class="card-img-top" alt="..." />
+              <div class="card-body">
+                <p class="card-title">배찌</p>
+                <p class="card-text">
+                  잠깐!!! 나 지금 엄청 배고프고, 집에 가고 싶은데... 너
+                  때문에... 모드레드... 나 화났어!!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 모달 트리거 수정, 삭제 시작 -->
+          <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div class="card">
+              <img
+                src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
+                class="card-img-top" alt="..." />
+              <div class="card-body">
+                <p class="card-title">다오</p>
+                <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
+              </div>
+            </div>
+          </button>
+
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel1">
+                    자기소개
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- 이미지등록 -->
+                <div class="modal-body">
+                  <h3 style="margin-left: 8%">이미지 등록</h3>
+                  <!-- 정보입력 -->
+                  <form action="/" method="GET">
+                    <div>
+                      <div class="img_box1">
+                        <img id="u_url"
+                          src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                      </div>
+                      <div class="img_url1">
+                        <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                        <button id="u_img_btn" style="width: 90px">
+                          등록하기
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="check_box">
+                      <li>
+                        <label for="u_name">이름</label>
+                        <input type="text" id="u_name" name="m_name" />
+                      </li>
+                      <li>
+                        <label for="u_mbti">MBTI</label>
+                        <input type="text" id="u_mbti" name="m_mbti" />
+                      </li>
+                      <li>
+                        <label for="u_role">역할</label>
+                        <input type="text" id="u_role" name="m_role" />
+                      </li>
+                      <li>
+                        <label for="s_address">주소</label>
+                          <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly />
+                      </li>
+                      <li>
+                        <label for="u_comment">자기소개</label>
+                        <textarea id="u_comment"></textarea>
+                      </li>
+                    </ul>
+                    <div id="ud-btn">
+                      <button id="u_btn">수정하기</button>
+                      <button id="d_btn">삭제하기</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 모달 트리거 수정, 삭제 시작 -->
-            <button
-              class="col"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal1"
-            >
-              <div class="card">
-                <img
-                  src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <p class="card-title">다오</p>
-                  <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
-                </div>
-              </div>
-            </button>
+          <div class="col">
+            <div class="card">
+              <!-- 모달 트리거 생성하기 시작 -->
+              <div class="card-body2">
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" style="width: 300px; height: 450px; font-size: 150px">
+                  +
+                </button>
 
-            <div
-              class="modal fade"
-              id="exampleModal1"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel1"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel1">
-                      자기소개
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <!-- 이미지등록 -->
-                  <div class="modal-body">
-                    <h3 style="margin-left: 8%">이미지 등록</h3>
-                    <!-- 정보입력 -->
-                    <form action="/" method="GET">
-                      <div>
-                        <div class="img_box1">
-                          <img
-                            id="u_url"
-                            src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-                          />
-                        </div>
-                        <div class="img_url1">
-                          <input
-                            type="text"
-                            id="u_img"
-                            placeholder="url을 넣어주세요"
-                            style="width: 300px"
-                          />
-                          <button id="u_img_btn" style="width: 90px">
-                            등록하기
-                          </button>
-                        </div>
+                <!-- 헤드부분 -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="exampleModalLabel">
+                          자기 소개
+                        </h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <ul class="check_box">
-                        <li>
-                          <label for="u_name">이름</label>
-                          <input type="text" id="u_name" name="m_name" />
-                        </li>
-                        <li>
-                          <label for="u_mbti">MBTI</label>
-                          <input type="text" id="u_mbti" name="m_mbti" />
-                        </li>
-                        <li>
-                          <label for="u_role">역할</label>
-                          <input type="text" id="u_role" name="m_role" />
-                        </li>
-                        <li>
-                          <label for="u_address">사는 지역</label>
-                          <input type="text" id="u_address" name="m_address" />
-                        </li>
-                        <li>
-                          <label for="u_comment">자기소개</label>
-                          <textarea id="u_comment"></textarea>
-                        </li>
-                      </ul>
-                      <div id="ud-btn">
-                        <button id="u_btn">수정하기</button>
-                        <button id="d_btn">삭제하기</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <!-- 모달 트리거 생성하기 시작 -->
-                <div class="card-body2">
-                  <button
-                    type="button"
-                    class="btn btn-outline-danger"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    style="width: 300px; height: 450px; font-size: 150px"
-                  >
-                    +
-                  </button>
-
-                  <!-- 헤드부분 -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h2 class="modal-title fs-5" id="exampleModalLabel">
-                            자기 소개
-                          </h2>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
 
 
-                        <!-- 이미지 등록 -->
-                        <div class="modal-body">
-                          <div class="user_wrap">
-                            <h2 style="margin-left: 8%">이미지 등록</h2>
+                      <!-- 이미지 등록 -->
+                      <div class="modal-body">
+                        <div class="user_wrap">
+                          <h2 style="margin-left: 8%">이미지 등록</h2>
 
-                            <!-- 정보입력 -->
-                            <form action="/" method="POST">
-                              <div>
-                                <div class="img_box">
-                                  <img
-                                    id="s_url"
-                                    src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-                                  />
-                                </div>
-                                <div class="img_url">
-                                  <input
-                                    type="text"
-                                    id="s_img"
-                                    placeholder="url을 넣어주세요"
-                                    style="width: 300px"
-                                  />
-                                  <button id="s_img_btn">등록하기</button>
-                                </div>
+                          <!-- 정보입력 -->
+                          <form action="/" method="POST">
+                            <div>
+                              <div class="img_box">
+                                <img id="s_url"
+                                  src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
                               </div>
-                              <div class="check_box">
-                                <ul>
-                                  <li>
-                                    <label for="s_name">이름</label>
-                                    <input
-                                      type="text"
-                                      id="s_name"
-                                      name="m_name"
-
-                                    />
-                                  </li>
-                                  <li>
-                                    <label for="s_mbti">MBTI</label>
-                                    <input
-                                      type="text"
-                                      id="s_mbti"
-                                      name="m_mbti"
-                                    />
-                                  </li>
-                                  <li>
-                                    <label for="s_role">역할</label>
-                                    <input
-                                      type="text"
-                                      id="s_role"
-                                      name="m_role"
-                                    />
-                                  </li>
-                                  <li>
-                                    <label for="s_address">사는 지역</label>
-                                    <input
-                                      type="text"
-                                      id="s_address"
-                                      name="m_address"
-                                    />
-                                  </li>
-                                  <li>
-                                    <label for="s_comment">자기소개</label>
-                                    <textarea id="s_comment"></textarea>
-                                  </li>
-                                  <button id="s_btn">등록하기</button>
-                                </ul>
+                              <div class="img_url">
+                                <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                                <button id="s_img_btn">등록하기</button>
                               </div>
-                            </form>
-                          </div>
+                            </div>
+                            <div class="check_box">
+                              <ul>
+                                <li>
+                                  <label for="s_name">이름</label>
+                                  <input type="text" id="s_name" name="m_name" />
+                                </li>
+                                <li>
+                                  <label for="s_mbti">MBTI</label>
+                                  <input type="text" id="s_mbti" name="m_mbti" />
+                                </li>
+                                <li>
+                                  <label for="s_role">역할</label>
+                                  <input type="text" id="s_role" name="m_role" />
+                                </li>
+                                <li>
+                                  <label for="s_address">주소</label>
+                                    <input type="text" id="s_address2" name="m_address" onclick="addressAPI2()" readonly />
+                                </li>
+                                <li>
+                                  <label for="s_comment">자기소개</label>
+                                  <textarea id="s_comment"></textarea>
+                                </li>
+                                <button id="s_btn">등록하기</button>
+                              </ul>
+                            </div>
+                          </form>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- 수정, 삭제하기 -->
               </div>
+
+              <!-- 수정, 삭제하기 -->
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <footer id="topBtn">
-      <button onclick="moveToTop()" class="btn-moveTop">↑ 위로 가기</button>
-    </footer>
-  </body>
+    </div>
+  </main>
+  <footer id="topBtn">
+    <button onclick="moveToTop()" class="btn-moveTop">↑ 위로 가기</button>
+  </footer>
+</body>
+
 </html>
