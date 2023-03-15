@@ -110,8 +110,14 @@ ul {
     overflow: hidden;
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 67.5rem) {
     .intro {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 44.75rem) {
+    #intro-text {
+        display: none;
     }
 }

@@ -35,12 +35,6 @@
 
     <!-- 정찬호 -->
     <link rel="stylesheet" href="../static/css/modal.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -54,7 +48,6 @@
   <body>
     <header>
       <h1 id="page-logo">one A</h1>
-      <div class="gradcircle"></div>
     </header>
     <main>
       <section id="mainpage">
@@ -62,7 +55,7 @@
           <!--사진-->
           <img src="../static/images/ONEA_4.png" alt="team" />
           <!--설명-->
-          <div>
+          <div id="intro-text">
             <h2>A-1조 one A</h2>
             <p>안녕하세요.</p>
             <p>
@@ -91,178 +84,161 @@
             </p>
           </div>
         </section>
-        <!--선-->
-        <hr />
-        <!--팀원소개-->
-        <section>
-          <div class="content2-wrap">
-            <div class="content2-container">
-              <div
-                id="card-list"
-                class="row row-cols-xm-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-2"
-              >
-                <div class="col">
-                  <div class="card">
-                    <img
-                      src="https://i.namu.wiki/i/tP8085P4nzY3gjHUR8YmHPX-YDeNiywu6b9SON_yLHXNleJ1-nAJcWzR0LJv5h3ji4z6oCvTga391JqyoUyfBNg0Crr6GdDkNF1m_dWl-W7blWu8BBgZ_IiyAk-tSWLkmdBhsfYqPHag_jUOBEql-g.webp"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <p class="card-title">배찌</p>
-                      <p class="card-text">
-                        잠깐!!! 나 지금 엄청 배고프고, 집에 가고 싶은데... 너
-                        때문에... 모드레드... 나 화났어!!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img
-                      src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <p class="card-title">다오</p>
-                      <p class="card-text">
-                        "잘 봐둬! 최고의 레이스가 될거야!"
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <!-- 모달 트리거 생성하기 시작 -->
-                    <div class="card-body2">
-                      <button
-                        type="button"
-                        class="btn btn-outline-danger"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        style="width: 300px; height: 450px; font-size: 150px"
-                      >
-                        +
-                      </button>
+      </section>
+      <!--선-->
+      <hr />
+      <!--팀원소개-->
 
-                      <!-- 헤드부분 -->
-                      <div
-                        class="modal fade"
-                        id="exampleModal"
-                        tabindex="-1"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true"
-                      >
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h2
-                                class="modal-title fs-5"
-                                id="exampleModalLabel"
-                              >
-                                자기 소개
-                              </h2>
-                              <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              ></button>
-                            </div>
+      <div class="content2-wrap">
+        <div class="content2-container">
+          <div
+            id="card-list"
+            class="row row-cols-xm-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-2"
+          >
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://i.namu.wiki/i/tP8085P4nzY3gjHUR8YmHPX-YDeNiywu6b9SON_yLHXNleJ1-nAJcWzR0LJv5h3ji4z6oCvTga391JqyoUyfBNg0Crr6GdDkNF1m_dWl-W7blWu8BBgZ_IiyAk-tSWLkmdBhsfYqPHag_jUOBEql-g.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-title">배찌</p>
+                  <p class="card-text">
+                    잠깐!!! 나 지금 엄청 배고프고, 집에 가고 싶은데... 너
+                    때문에... 모드레드... 나 화났어!!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-title">다오</p>
+                  <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <!-- 모달 트리거 생성하기 시작 -->
+                <div class="card-body2">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    style="width: 300px; height: 450px; font-size: 150px"
+                  >
+                    +
+                  </button>
 
-                            <!-- 이미지 등록 -->
-                            <div class="modal-body">
-                              <div class="user_wrap">
-                                <h2 style="margin-left: 8%">이미지 등록</h2>
-                                <div>
-                                  <div class="img_box">
-                                    <img
-                                      id="s_url"
-                                      src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-                                      style=""
-                                      width="100%"
-                                      ,
-                                      height="auto"
-                                    />
-                                  </div>
-                                  <div class="img_url">
+                  <!-- 헤드부분 -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title fs-5" id="exampleModalLabel">
+                            자기 소개
+                          </h2>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+
+                        <!-- 이미지 등록 -->
+                        <div class="modal-body">
+                          <div class="user_wrap">
+                            <h2 style="margin-left: 8%">이미지 등록</h2>
+                            
+                            <!-- 정보입력 -->
+                            <form action="/" method="POST">
+                              <div>
+                                <div class="img_box">
+                                  <img
+                                    id="s_url"
+                                    src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
+                                  />
+                                </div>
+                                <div class="img_url">
+                                  <input
+                                  type="text"
+                                  id="s_img"
+                                  placeholder="url을 넣어주세요"
+                                  style="width: 300px"
+                                  />
+                                  <button id="s_img_btn">등록하기</button>
+                                </div>
+                              </div>
+                              <div class="check_box">
+                                <ul>
+                                  <li>
+                                    <label for="s_name">이름</label>
                                     <input
                                       type="text"
-                                      id="s_img"
-                                      placeholder="url을 넣어주세요"
-                                      style="width: 300px"
+                                      id="s_name"
+                                      name="m_name"
                                     />
-                                    <button id="s_img_btn">등록하기</button>
-                                  </div>
-                                </div>
-
-                                <!-- 정보입력 -->
-                                <form action="/" method="POST">
-                                  <div class="check_box">
-                                    <ul>
-                                      <li>
-                                        <label for="s_name">이름</label>
-                                        <input
-                                          type="text"
-                                          id="s_name"
-                                          name="m_name"
-                                        />
-                                      </li>
-                                      <li>
-                                        <label for="s_mbti">MBTI</label>
-                                        <input
-                                          type="text"
-                                          id="s_mbti"
-                                          name="m_mbti"
-                                        />
-                                      </li>
-                                      <li>
-                                        <label for="s_role">역할</label>
-                                        <input
-                                          type="text"
-                                          id="s_role"
-                                          name="m_role"
-                                        />
-                                      </li>
-                                      <li>
-                                        <label for="s_address">사는 지역</label>
-                                        <input
-                                          type="text"
-                                          id="s_address"
-                                          name="m_address"
-                                        />
-                                      </li>
-                                      <li>
-                                        <label for="s_comment">자기소개</label>
-                                        <textarea id="s_comment"></textarea>
-                                      </li>
-                                      <button id="s_btn">등록하기</button>
-                                    </ul>
-                                  </div>
-                                </form>
+                                  </li>
+                                  <li>
+                                    <label for="s_mbti">MBTI</label>
+                                    <input
+                                      type="text"
+                                      id="s_mbti"
+                                      name="m_mbti"
+                                    />
+                                  </li>
+                                  <li>
+                                    <label for="s_role">역할</label>
+                                    <input
+                                      type="text"
+                                      id="s_role"
+                                      name="m_role"
+                                    />
+                                  </li>
+                                  <li>
+                                    <label for="s_address">사는 지역</label>
+                                    <input
+                                      type="text"
+                                      id="s_address"
+                                      name="m_address"
+                                    />
+                                  </li>
+                                  <li>
+                                    <label for="s_comment">자기소개</label>
+                                    <textarea id="s_comment"></textarea>
+                                  </li>
+                                  <button id="s_btn">등록하기</button>
+                                </ul>
                               </div>
-                            </div>
+                            </form>
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    <!-- 수정, 삭제하기 -->
-
-                    
-
-
-
-
-
                   </div>
                 </div>
+
+                <!-- 수정, 삭제하기 -->
               </div>
             </div>
           </div>
-        </section>
-      </section>
+        </div>
+      </div>
     </main>
     <footer id="topBtn">
       <button onclick="moveToTop()" class="btn-moveTop">↑ 위로 가기</button>

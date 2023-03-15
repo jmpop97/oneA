@@ -10,9 +10,7 @@ form {
   width: 900px;
   height: 800px;
 }
-.user_wrap {
-  /* background-color: black; */
-}
+
 .img_box {
   /* background-color: green; */
   position: relative;
@@ -27,6 +25,7 @@ form {
   height: 100%;
   object-fit: cover;
 }
+
 .img_url {
   /* background-color: aquamarine; */
   display: inline;
@@ -97,9 +96,7 @@ form {
   width: 900px;
   height: 800px;
 }
-.user_wrap1 {
-  /* background-color: black; */
-}
+
 .img_box1 {
   /* background-color: green; */
   position: relative;

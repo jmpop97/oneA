@@ -76,6 +76,18 @@ function read_members() {
 
     })
 }
+function read_member() {
+    let m_id = "640fbe71b2928d8e1218f8f2"
+    console.log(m_id)
+    fetch_id='/member/'+m_id;
+    fetch(fetch_id).then((res) => res.json()).then((data) => {
+        let rows = data
+        console.log(rows)
+
+        
+
+    })
+}
 function read_name_member() {
     fetch('/members').then((res) => res.json()).then((data) => {
         let rows = data['result']
