@@ -125,3 +125,19 @@ function read_name_member() {
     })
 }
 
+function read_name_member2() {
+    fetch('/members2').then((res) => res.json()).then((data) => {
+        let rows = data['result']
+
+        console.log(rows)
+
+        rows.forEach((a) => {            
+            let name = a['m_name']
+            let mbti = a['m_mbti']
+            let role = a['m_role']
+            let address = a['m_address']
+            let comment = a['m_comment']
+
+        })
+    })
+}
