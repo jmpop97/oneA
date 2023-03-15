@@ -114,6 +114,7 @@ function read_name_member() {
     })
 }
 
+
 function read_cards() {
 
     fetch('/members').then((res) => res.json()).then((data) => {
@@ -274,3 +275,8 @@ function read_cards() {
         document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
     })
 }
+
+function moveToTop() {
+    document.body.scrollIntoView({ behavior: "smooth" });
+  };
+
