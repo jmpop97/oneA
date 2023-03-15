@@ -1,164 +1,95 @@
 read_cards()
 function save_member() {
-    let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
-    let m_name = "ㄷ"
-    let m_mbti = "ㄷ"
-    let m_role = "ㄷ"
-    let m_address = "ㄷ"
-    let m_comment = "ㄷ"
+  let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
+  let m_name = "ㄷ"
+  let m_mbti = "ㄷ"
+  let m_role = "ㄷ"
+  let m_address = "ㄷ"
+  let m_comment = "ㄷ"
 
-    let formData = new FormData();
-    formData.append("m_img_give", m_img);
-    formData.append("m_name_give", m_name);
-    formData.append("m_mbti_give", m_mbti);
-    formData.append("m_role_give", m_role);
-    formData.append("m_address_give", m_address);
-    formData.append("m_comment_give", m_comment);
-    alert('hi')
+  let formData = new FormData();
+  formData.append("m_img_give", m_img);
+  formData.append("m_name_give", m_name);
+  formData.append("m_mbti_give", m_mbti);
+  formData.append("m_role_give", m_role);
+  formData.append("m_address_give", m_address);
+  formData.append("m_comment_give", m_comment);
+  alert('hi')
 
-    fetch('/member', { method: "POST", body: formData, })
-        .then((res) => res.json())
-        .then((data) => {
-            alert(data['msg']);
-        });
+  fetch('/member', { method: "POST", body: formData, })
+    .then((res) => res.json())
+    .then((data) => {
+      alert(data['msg']);
+    });
 }
 function update_member() {
-    let m_id = "640fbe71b2928d8e1218f8f2"
-    let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
-    let m_name = "이름수정됨"
-    let m_mbti = "mbti수정됨"
-    let m_role = "역할수정됨"
-    let m_address = "주소수정됨"
-    let m_comment = "소개수정됨"
+  let m_id = "640fbe71b2928d8e1218f8f2"
+  let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
+  let m_name = "이름수정됨"
+  let m_mbti = "mbti수정됨"
+  let m_role = "역할수정됨"
+  let m_address = "주소수정됨"
+  let m_comment = "소개수정됨"
 
-    let formData = new FormData();
-    formData.append("m_id_give", m_id);
-    formData.append("m_img_give", m_img);
-    formData.append("m_name_give", m_name);
-    formData.append("m_mbti_give", m_mbti);
-    formData.append("m_role_give", m_role);
-    formData.append("m_address_give", m_address);
-    formData.append("m_comment_give", m_comment);
-    alert('fix')
-    fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
-        alert(data['msg']);
-    })
+  let formData = new FormData();
+  formData.append("m_id_give", m_id);
+  formData.append("m_img_give", m_img);
+  formData.append("m_name_give", m_name);
+  formData.append("m_mbti_give", m_mbti);
+  formData.append("m_role_give", m_role);
+  formData.append("m_address_give", m_address);
+  formData.append("m_comment_give", m_comment);
+  alert('fix')
+  fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
+    alert(data['msg']);
+  })
 }
 function delete_member() {
-    let m_id = "640fbdcbae352a14a1ee125a"
+  let m_id = "640fbdcbae352a14a1ee125a"
 
-    let formData = new FormData();
-    formData.append("m_id_give", m_id);
-    alert('삭제')
-    fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
-        alert(data['msg']);
-    })
+  let formData = new FormData();
+  formData.append("m_id_give", m_id);
+  alert('삭제')
+  fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
+    alert(data['msg']);
+  })
 }
 function read_members() {
 
-    fetch('/members').then((res) => res.json()).then((data) => {
-        let rows = data['result']
-        var test = rows
-        rows.forEach((a) => {
-            console.log(a)
-            let name = a['m_name']
-            let mbti = a['m_mbti']
-            let role = a['m_role']
-            let address = a['m_address']
-            let comment = a['m_comment']
+  fetch('/members').then((res) => res.json()).then((data) => {
+    let rows = data['result']
+    var test = rows
+    rows.forEach((a) => {
+      console.log(a)
+      let name = a['m_name']
+      let mbti = a['m_mbti']
+      let role = a['m_role']
+      let address = a['m_address']
+      let comment = a['m_comment']
 
-            // let temp_html = `<tr>
-            //                     <td>${name}</td>
-            //                     <td>${mbti}</td>
-            //                     <td>${role}</td>
-            //                     <td>${address}</td>
-            //                     <td>${comment}</td>
-            //                 </tr>`       
-            // $('#order-box').append(temp_html)
-        })
-
+      // let temp_html = `<tr>
+      //                     <td>${name}</td>
+      //                     <td>${mbti}</td>
+      //                     <td>${role}</td>
+      //                     <td>${address}</td>
+      //                     <td>${comment}</td>
+      //                 </tr>`       
+      // $('#order-box').append(temp_html)
     })
+
+  })
 }
-function read_member() {
-    let m_id = "640fbe71b2928d8e1218f8f2"
-    console.log(m_id)
-    fetch_id='/member/'+m_id;
-    fetch(fetch_id).then((res) => res.json()).then((data) => {
-        let rows = data
-        console.log(rows)
-
-        
-
-    })
-}
-function read_name_member() {
-    fetch('/members').then((res) => res.json()).then((data) => {
-        let rows = data['result']
-
-        console.log(rows)
-        console.log(rows[0])
-        //a.(순서로 정할 값)
-        rows.sort(function (a, b) {
-            if (a.m_name > b.m_name) {
-                return 1;
-            }
-            if (a.m_name < b.m_name) {
-                return -1;
-            }
-            // a must be equal to b
-            return 0;
-        });
-        console.log(rows)
-        rows.forEach((a) => {            
-            let name = a['m_name']
-            let mbti = a['m_mbti']
-            let role = a['m_role']
-            let address = a['m_address']
-            let comment = a['m_comment']
-
-            // let temp_html = `<tr>
-            //                     <td>${name}</td>
-            //                     <td>${mbti}</td>
-            //                     <td>${role}</td>
-            //                     <td>${address}</td>
-            //                     <td>${comment}</td>
-            //                 </tr>`       
-            // $('#order-box').append(temp_html)
-        })
-    })
-}
-function read_cards() {
-
-    fetch('/members2').then((res) => res.json()).then((data) => {
-        let rows = data['result']
-        console.log(rows)
-        // document.getElementById('cards-box').empty()
-        document.getElementById("card-list").innerHTML = "";
-
-        rows.forEach((a) => {
-
-            let image = a['m_img']
-            let name = a['m_name']
-            let comment = a['m_comment']
-            // console.log(image, name, comment)
-            let temp_html = `<button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-            <div class="card">
-              <img
-                src="${image}"
-                class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-title">${name}</p>
-                <p class="card-text">${comment}</p>
-              </div>
-            </div>
-          </button>`
-
-//             $('#cards-box').append(temp_html)
-              document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
-        })
-
-        // console.log("+card")
-        let temp_html = `<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+function read_member(id) {
+  let m_id = id
+  fetch_id = '/member/' + m_id;
+  fetch(fetch_id).then((res) => res.json()).then((data) => {
+    let a = data['result']['0']
+    let image = a['m_img']
+    let name = a['m_name']
+    let mbti = a['m_mbti']
+    let role = a['m_role']
+    let comment = a['m_comment']
+    let temp_html = `<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
         aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -176,10 +107,10 @@ function read_cards() {
                 <div>
                   <div class="img_box1">
                     <img id="u_url"
-                      src="img수정등록" />
+                      src=${image} />
                   </div>
                   <div class="img_url1">
-                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value="img수정등록"/>
+                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value=${image}/>
                     <button id="u_img_btn" style="width: 90px">
                       등록하기
                     </button>
@@ -188,23 +119,23 @@ function read_cards() {
                 <ul class="check_box">
                   <li>
                     <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="m_name" value="이름수정넣기"/>
+                    <input type="text" id="u_name" name="m_name" value=${name}/>
                   </li>
                   <li>
                     <label for="u_mbti">MBTI</label>
-                    <input type="text" id="u_mbti" name="m_mbti" value="mbti수정넣기"/>
+                    <input type="text" id="u_mbti" name="m_mbti" value=${mbti}/>
                   </li>
                   <li>
                     <label for="u_role">역할</label>
-                    <input type="text" id="u_role" name="m_role"value="열할수정넣기" />
+                    <input type="text" id="u_role" name="m_role"value=${role} />
                   </li>
                   <li>
                     <label for="s_address">주소</label>
-                      <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly value="주소수정넣기"/>
+                      <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly    />
                   </li>
                   <li>
                     <label for="u_comment">자기소개</label>
-                    <textarea id="u_comment" >코멘드수정넣기</textarea>
+                    <textarea id="u_comment" >${comment}</textarea>
                   </li>
                 </ul>
                 <div id="ud-btn">
@@ -293,9 +224,81 @@ function read_cards() {
           <!-- 수정, 삭제하기 -->
         </div>
       </div>`
-        document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
+    document.getElementById('card-list').insertAdjacentHTML("beforeend", temp_html)
+
+
+  })
+}
+function read_name_member() {
+  fetch('/members').then((res) => res.json()).then((data) => {
+    let rows = data['result']
+
+    console.log(rows)
+    console.log(rows[0])
+    //a.(순서로 정할 값)
+    rows.sort(function (a, b) {
+      if (a.m_name > b.m_name) {
+        return 1;
+      }
+      if (a.m_name < b.m_name) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    console.log(rows)
+    rows.forEach((a) => {
+      let name = a['m_name']
+      let mbti = a['m_mbti']
+      let role = a['m_role']
+      let address = a['m_address']
+      let comment = a['m_comment']
+
+      // let temp_html = `<tr>
+      //                     <td>${name}</td>
+      //                     <td>${mbti}</td>
+      //                     <td>${role}</td>
+      //                     <td>${address}</td>
+      //                     <td>${comment}</td>
+      //                 </tr>`       
+      // $('#order-box').append(temp_html)
     })
+  })
+}
+function read_cards() {
+
+  fetch('/members2').then((res) => res.json()).then((data) => {
+    let rows = data['result']
+    console.log(rows)
+    // document.getElementById('cards-box').empty()
+    document.getElementById("card-list").innerHTML = "";
+
+    rows.forEach((a) => {
+      let m_id = a['_id']['$oid']
+      console.log(m_id)
+      let image = a['m_img']
+      let name = a['m_name']
+      let comment = a['m_comment']
+      // console.log(image, name, comment)
+      let temp_html = `<button class="col" type="button" onclick = "read_member('${m_id}')" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div class="card">
+              <img
+                src="${image}"
+                class="card-img-top" alt="..." />
+              <div class="card-body">
+                <p class="card-title">${name}</p>
+                <p class="card-text">${comment}</p>
+              </div>
+            </div>
+          </button>`
+
+      //             $('#cards-box').append(temp_html)
+      document.getElementById('card-list').insertAdjacentHTML("beforeend", temp_html)
+    })
+
+    // console.log("+card")
+  })
 }
 function moveToTop() {
-    document.body.scrollIntoView({ behavior: "smooth" });
-  };
+  document.body.scrollIntoView({ behavior: "smooth" });
+};
