@@ -12,27 +12,32 @@
 }
 
 .content-container {
-  width: 1000px;
   margin: 0 auto;
 
   display: flex;
+  background-color: #4e342e;
 }
 
 .content2-container {
-  width: 1000px;
+  width: 90%;
   margin: 0 auto;
+  
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;    
 }
+
 .footer-container {
-  width: 1000px;
+  width: 90%;
   height: 100px;
   line-height: 100px;
   margin: 0 auto;
   background-color: #6d4c41;
 }
 
-.card {
+.col {
   width: 320px;
-  height: 450px;
+  height: 450px; 
 }
 
 .card-img-top {
@@ -64,22 +69,41 @@
 }
 
 .card-title {
-  height: 30px;
+  height: 40px;
+  color: #F9F7F0;
+  background-color: #072A40;
+  
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .card-text {
-  color: black;
   width: 250px;
   height: 70px;
+  color: #F9F7F0;
+  background-color: #18B7BE;
+
+  margin: 0 auto;
   font-size: 20px;
   overflow: hidden;
   word-wrap: break-word;
-  white-space: narmal;
+  white-space: normal;
   line-height: 1.2;
   text-align: center;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -94,7 +118,6 @@
 .btn3 {
   padding: 15px 100px;
   margin: 10px 4px;
-  color: black;
   font-family: sans-serif;
   text-transform: uppercase;
   text-align: center;
