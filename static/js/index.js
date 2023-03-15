@@ -1,49 +1,118 @@
+
 function save_member() {
-    let m_name= "이름"
-    let m_mbti="mbti"
-    let m_role="역할"
-    let m_address="주소"
-    let m_comment="소개"
+    let m_name = "ㄷ"
+    let m_mbti = "ㄷ"
+    let m_role = "ㄷ"
+    let m_address = "ㄷ"
+    let m_comment = "ㄷ"
 
     let formData = new FormData();
-    formData.append("m_name_give",m_name);
-    formData.append("m_mbti_give",m_mbti);
-    formData.append("m_role_give",m_role);
-    formData.append("m_address_give",m_address);
-    formData.append("m_comment_give",m_comment);
+    formData.append("m_name_give", m_name);
+    formData.append("m_mbti_give", m_mbti);
+    formData.append("m_role_give", m_role);
+    formData.append("m_address_give", m_address);
+    formData.append("m_comment_give", m_comment);
     alert('hi')
-    fetch('/create_member', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
-        alert(data['msg']);
-    })
+
+    fetch('/member', { method: "POST", body: formData, })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data['msg']);
+        });
 }
+
 function update_member() {
-    let m_id="640fbdcbae352a14a1ee125a"
-    let m_name= "이름수정됨"
-    let m_mbti="mbti수정됨"
-    let m_role="역할수정됨"
-    let m_address="주소수정됨"
-    let m_comment="소개수정됨"
+    let m_id = "640fbe71b2928d8e1218f8f2"
+    let m_name = "이름수정됨"
+    let m_mbti = "mbti수정됨"
+    let m_role = "역할수정됨"
+    let m_address = "주소수정됨"
+    let m_comment = "소개수정됨"
 
     let formData = new FormData();
-    formData.append("m_id_give",m_id);
-    formData.append("m_name_give",m_name);
-    formData.append("m_mbti_give",m_mbti);
-    formData.append("m_role_give",m_role);
-    formData.append("m_address_give",m_address);
-    formData.append("m_comment_give",m_comment);
+    formData.append("m_id_give", m_id);
+    formData.append("m_name_give", m_name);
+    formData.append("m_mbti_give", m_mbti);
+    formData.append("m_role_give", m_role);
+    formData.append("m_address_give", m_address);
+    formData.append("m_comment_give", m_comment);
     alert('fix')
-    fetch('/update_member', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+    fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
         alert(data['msg']);
     })
 }
 function delete_member() {
-    let m_id="640fbdcbae352a14a1ee125a"
-    
+    let m_id = "640fbdcbae352a14a1ee125a"
+
     let formData = new FormData();
-    formData.append("m_id_give",m_id);
+    formData.append("m_id_give", m_id);
     alert('삭제')
-    fetch('/delete_member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
+    fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
         alert(data['msg']);
     })
 }
+function read_members() {
 
+    fetch('/members').then((res) => res.json()).then((data) => {
+        let rows = data['result']
+        var test = rows
+        rows.forEach((a) => {
+            console.log(a)
+            let name = a['m_name']
+            let mbti = a['m_mbti']
+            let role = a['m_role']
+            let address = a['m_address']
+            let comment = a['m_comment']
+
+            // let temp_html = `<tr>
+            //                     <td>${name}</td>
+            //                     <td>${mbti}</td>
+            //                     <td>${role}</td>
+            //                     <td>${address}</td>
+            //                     <td>${comment}</td>
+            //                 </tr>`       
+            // $('#order-box').append(temp_html)
+        })
+
+    })
+}
+function read_name_member() {
+    fetch('/members').then((res) => res.json()).then((data) => {
+        let rows = data['result']
+
+        console.log(rows)
+        console.log(rows[0])
+        //a.(순서로 정할 값)
+        rows.sort(function (a, b) {
+            if (a.m_name > b.m_name) {
+                return 1;
+            }
+            if (a.m_name < b.m_name) {
+                return -1;
+            }
+            // a must be equal to b
+            return 0;
+        });
+        console.log(rows)
+        rows.forEach((a) => {            
+            let name = a['m_name']
+            let mbti = a['m_mbti']
+            let role = a['m_role']
+            let address = a['m_address']
+            let comment = a['m_comment']
+
+            // let temp_html = `<tr>
+            //                     <td>${name}</td>
+            //                     <td>${mbti}</td>
+            //                     <td>${role}</td>
+            //                     <td>${address}</td>
+            //                     <td>${comment}</td>
+            //                 </tr>`       
+            // $('#order-box').append(temp_html)
+        })
+    })
+}
+
+let moveToTop = function () {
+    document.body.scrollIntoView({ behavior: "smooth" });
+  };
