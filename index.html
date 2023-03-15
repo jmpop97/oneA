@@ -1,116 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/modal.css">
+    <script src="jquery-3.6.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Title</title>
+<style>
+    /*버튼 사용 전에는 등장 x */
+    input[id="popup"] {
+        display: none;
+    }
+    /*모달 등장 버튼 css*/
+    input[id="popup"] +label{
+        display: inline;
+        padding: 20px;
+        background-color: silver;
+        color: white;
+    }
+    /*모달 창 바깥부분 */
+    input[id="popup"] +label +div{
+        opacity: 0;; visibility: hidden;transition: all 0.3s;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 100;
+    }
+    /*모달 창 바깥부분 클릭 시 닫힘*/
+    input[id="popup"]:checked +label +div{
+        opacity: 1;visibility: visible;
+    }
+    /*주 컨텐츠 공간*/
+    input[id="popup"] +label +div > div{
+        position: absolute;
+        overflow: scroll;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 85%;
+        max-width: 850px;
+        height: 85%;
+        max-height:900px;
+        background-color:white;
+        z-index: 2;
+    }
+    /*닫기버튼*/
+     input[id="popup"] + label + div > div > label{
+         position: absolute;
+         top: 0%;
+         right: 0%;
+         transform: translate(40%, -40%);
+         padding: 20px;
+         background:rgba(219,8,28,.75);
+         border-radius: 100%;
+         z-index: 1;
+     }
+     /*뒷배경*/
+     input[id="popup"] +label +div > label{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background:rgba(0,0,0,.7);
+         z-index: 1;
+     }
+     .img_box{
+         /*background-color: black;*/
+         width: 200px;
+         height: 200px;
+         margin-left: 50px;
+     }
+     .img_url{
+         float: left;
+         height: 100px;
+         width: 150px;
+         padding-left: 10px;
+         margin-left: 35px;
+     }
+     .img_btn{
+         height: 50px;
+         width: 70px;
+         padding-left: 50px;
+         margin-top: 20px;
+     }
+     .check_box{
+         overflow: scroll;
+         position: fixed;
+         /*background-color:silver;*/
+         width: 75%;
+         max-width: 750px;
+         height: 75%;
+         max-height: 355px;
+         margin-top: 80px;
+         margin-left: 50px;
+         padding-top: 20px;
+     }
+    /*popup1은 수정/삭제 모달기능*/
+    /*버튼 사용 전에는 등장 x */
+    input[id="popup1"] {
+        display: none;
+    }
+    /*모달 등장 버튼 css*/
+    input[id="popup1"] +label{
+        display: inline;
+        padding: 20px;
+        background-color: silver;
+        color: white;
+    }
+    /*모달 창 바깥부분 */
+    input[id="popup1"] +label +div{
+        opacity: 0; visibility: hidden;transition: all 0.3s;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 100;
+    }
+    /*모달 창 바깥부분 클릭 시 닫힘*/
+    input[id="popup1"]:checked +label +div{
+        opacity: 1;visibility: visible;
+    }
+    /*주 컨텐츠 공간*/
+    input[id="popup1"] +label +div > div{
+        position: absolute;
+        overflow: scroll;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 85%;
+        max-width: 850px;
+        height: 85%;
+        max-height:900px;
+        background-color:white;
+        z-index: 2;
+    }
+    /*닫기버튼*/
+     input[id="popup1"] + label + div > div > label{
+         position: absolute;
+         top: 0%;
+         right: 0%;
+         transform: translate(40%, -40%);
+         padding: 20px;
+         background:rgba(219,8,28,.75);
+         border-radius: 100%;
+         z-index: 1;
+     }
+     /*뒷배경*/
+     input[id="popup1"] +label +div > label{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background:rgba(0,0,0,.7);
+         z-index: 1;
+     }
+     /*class값 1은 수정,삭제모달*/
+     .img_box1{
+         /*background-color: black;*/
+         width: 200px;
+         height: 195px;
+         margin-left: 50px;
+     }
+     .img_url1{
+         float: left;
+         height: 100px;
+         width: 150px;
+         padding-left: 10px;
+         margin-left: 35px;
+     }
+     .img_btn1{
+         height: 50px;
+         width: 70px;
+         padding-left: 50px;
+         margin-top: 20px;
+     }
+     .check_box1{
+         overflow: scroll;
+         position: fixed;
+         /*background-color:silver;*/
+         width: 75%;
+         max-width: 750px;
+         height: 75%;
+         max-height: 355px;
+         margin-top: 80px;
+         margin-left: 50px;
+         padding-top: 20px;
+     }
+
+</style>
 
 </head>
 <body>
-<!-- 생성하기 html -->
-<!-- 모달 트리거 버튼 -->
-    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        생성하기
-    </button>
-
-<!-- 헤드부분 -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">자기소개</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!--생성모달-->
+    <input type="checkbox" id="popup">
+<!--팝업 등장버튼    -->
+    <label for="popup">생성버튼</label>
+        <div>
+            <div>
+<!--팝업 닫기 버튼                -->
+                <label for="popup">❌</label>
+<!--주요 내용-->
+                <h3 style="margin-left: 10%;">이미지 등록</h3>
+                <div class="img_box">
+                    <img src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
+                         stlye="" width="100%" ,height="auto">
+                </div>
+                    <div class="img_url">
+                        <input id="image_url" type="text" placeholder="url을 넣어주세요" style=" width: 200px;height: 50px; margin: 15px;">
                     </div>
-                <div class="modal-body">
-<!-- 이미지등록                     -->
-                    <div class="user_wrap">                 
-                        <h3 style="margin-left: 8%;">이미지 등록</h3>
-                            <div>       
-                                <div class="img_box">
-                                    <img id="s_url" src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-                                    style="" width="100%" ,height=auto">
-                                </div>
-                                    <div class="img_url">
-                                        <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px;">                    
-                                        <button id="s_img_btn" style="width: 90px;">등록하기</button>
-                                    </div>
-                            </div>         
-<!-- 정보입력                         -->
-                        <div class="check_box">
-                            이름: <input type="text" id="s_name" name="m_name"
-                                style="max-width: 130px; max-height: 30px; margin-bottom:10px;"><br>
-                            MBTI:<input type="text" id="s_mbti" name="m_mbti"
-                                style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
-                            역할: <input type="text" id="s_role" name="m_role"
-                                style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
-                            주소: <input type="text" id="s_adress" name="m_adress"
-                                style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
-                            자기소개:<br><textarea id="s_comment"
-                                style="width:90%; max-width: 450px; height:75%; max-height:100px; border-radius: 7px;"></textarea><br>
-                            <button id="s_btn" style="width:80px; height: 40px; margin-right: 50%; margin-top: 10px; float:right; border: 1px solid black; border-radius: 4px; background-color: white;">등록하기</button>
-                            </div>
-                        </div>
+                    <div class="img_url img_btn">
+                        <button>등록하기</button>
                     </div>
-                </div>      
+<!--정보입력구역                -->
+                <div class="check_box">
+                    이름: <input type="text" name="m_name" style="max-width: 130px; max-height: 30px; margin-bottom:10px;"><br>
+                    MBTI:<input type="text" name="m_mbti" style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
+                    역할: <input type="text" name="m_role" style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
+                    주소: <input type="text" name="m_adress" style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
+                    자기소개:<br><textarea style="width:90%; max-width: 700px; height:75%; max-height:100px; border-radius: 7px;"></textarea><br>
+                    <button style="width:70px; height: 40px; margin-right: 50%; float:right;">등록하기</button>
+                </div>
             </div>
+<!--검은 부분 클릭 시 닫기기능            -->
+            <label for="popup"></label>
         </div>
-    </div>
-<!-- 생성하기 그룹 -->
 
-<!-- 수정,삭제하기 html  -->
-<!-- Button trigger modal -->
-<button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal1">
-    수정,삭제하기
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal1"  tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel1">자기소개</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!--수정,삭제 모달-->
+    <input type="checkbox" id="popup1">
+<!--수정, 삭제 팝업 등장버튼    -->
+    <label for="popup1">수정,삭제버튼</label>
+        <div>
+            <div>
+<!--수정, 삭제 팝업 닫기버튼                -->
+                <label for="popup1">❌</label>
+<!--수정, 삭제 주요 내용-->
+                <h3 style="margin-left: 10%;">이미지 등록</h3>
+                <div class="img_box1">
+                    <img src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
+                         stlye="" width="100%" ,height=auto">
                 </div>
-            <div class="modal-body">
-<!-- 이미지등록                     -->
-                <div class="user_wrap1">                 
-                    <h3 style="margin-left: 8%;">이미지 등록</h3>
-                        <div>       
-                            <div class="img_box1">
-                                <img id="u_url" src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg">
-                            </div>
-                                <div class="img_url1">
-                                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px;">                    
-                                    <button id="u_img_btn" style="width: 90px;">등록하기</button>
-                                </div>
-                        </div>         
-<!-- 정보입력                         -->
-                    <div class="check_box1">
-                        이름: <input type="text" id="u_name" name="m_name"
-                            style="max-width: 130px; max-height: 30px; margin-bottom:10px;"><br>
-                        MBTI:<input type="text" id="u_mbti" name="m_mbti"
-                            style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
-                        역할: <input type="text" id="u_role" name="m_role"
-                            style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
-                        주소: <input type="text" id="u_adress" name="m_adress"
-                            style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
-                        자기소개:<br><textarea id="u_comment"
-                            style="width:90%; max-width: 450px; height:75%; max-height:100px; border-radius: 7px;"></textarea><br>
-                        <button id="u_btn" style="width:80px; height: 40px; margin-right: 50%; margin-top: 10px; float:right; border: 1px solid black; border-radius: 4px; background-color: white;">수정하기</button>
-                        <button id="d_btn" style="width:80px; height: 40px; margin-left: 55%; margin-top: -40px; float:left; border: 1px solid black; border-radius: 4px; background-color: white;">삭제하기</button>                            
-
-                        </div>
+                    <div class="img_url1">
+                        <input type="text" placeholder="url을 넣어주세요" style="width: 200px;height: 50px; margin: 15px;">
+                    </div>
+                    <div class="img_url1 img_btn1">
+                        <button>등록하기</button>
+                    </div>
+<!--수정, 삭제 정보입력구역                -->
+                <div class="check_box1">
+                    이름: <input type="text" name="m_name" value="정찬호"style="max-width: 150px; max-height: 30px; margin-bottom:10px;"><br>
+                    MBTI:<input type="text" name="m_mbti" value="INFJ"style="max-width: 150px; max-height: 30px; margin-bottom: 10px;"><br>
+                    역할: <input type="text" name="m_role" value="모달"style="max-width: 190px; max-height: 30px; margin-bottom:10px;"><br>
+                    주소: <input type="text" name="m_adress" value="양산시~~"style="max-width: 300px; max-height: 30px; margin-bottom:10px;"><br>
+                    자기소개:<br><textarea style="width:90%; max-width: 700px; height:75%; max-height:100px;border-radius: 7px;">27살 남자, 아직 실력은 부족하지만 열심히 하고자 합니다</textarea><br>
+                   <div style="padding: 10px;">
+                    <button style="width:70px; height: 40px; margin-right: 55%; float:right;">수정하기</button>
+                    <button style="width:70px; height: 40px; margin-right: 35%; margin-top: -41px; float:right;">삭제하기</button>
                     </div>
                 </div>
-            </div>      
+            </div>
+<!--수정, 삭제 검은 부분 클릭 시 닫기기능            -->
+            <label for="popup1"></label>
         </div>
-    </div>
-</div>
-<!-- 수정,삭제하기 그룹 -->
 
 
 </body>
