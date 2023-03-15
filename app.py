@@ -22,8 +22,7 @@ def read_members():
 # members read2
 @app.route('/members2',methods=["GET"])
 def read_members2():
-    allmembers_data = list(db.member_info.find({}))
-    allmembers_data=allmembers_data.sort(reverse=True,key=lambda a: a)
+    allmembers_data = list(db.member_info.find({})).sort([("m_name",-1)])
     return json_util.dumps({'result':allmembers_data})
 
 # member read
