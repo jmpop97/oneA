@@ -16,17 +16,14 @@ header {
     box-sizing: border-box;
 }
 
-#page-logo a {
+#page-logo {
     padding: 10px;
     font-family: "Oleo Script", sans-serif;
-    color: #20303c;
     font-size: 5rem;
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0);
-}
-
-#page-logo {
     transition: transform 1s ease-in-out;
+    background: linear-gradient(to bottom, #41a079, #485750);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #page-logo:hover {
@@ -77,7 +74,7 @@ ul {
     padding: 0;
 }
 
- #topBtn {
+#topBtn {
     margin-bottom: 2rem;
     margin-right: 4rem;
     text-align: right;
@@ -86,7 +83,7 @@ ul {
     z-index: 10;
  }
 
- .btn-moveTop {
+.btn-moveTop {
     background-color: transparent;
     border: none;
     padding-right: 0.7rem;
@@ -95,7 +92,7 @@ ul {
     border-radius: 20px;
  }
 
- .btn-moveTop:hover {
+.btn-moveTop:hover {
     background-color: #263238;
     font-weight: bolder;
     color: #fff;
@@ -105,7 +102,8 @@ ul {
     margin: 2rem;
     margin-top: 0;
     padding: 1.5rem;
-    background-color: white;
+    background: linear-gradient(180deg, #191620, #0c000e);
+    color: #fff;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     overflow: hidden;
