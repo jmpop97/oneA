@@ -22,7 +22,6 @@ function save_member() {
             alert(data['msg']);
         });
 }
-
 function update_member() {
     let m_id = "640fbe71b2928d8e1218f8f2"
     let m_img = "https://play-lh.googleusercontent.com/38AGKCqmbjZ9OuWx4YjssAz3Y0DTWbiM5HB0ove1pNBq_o9mtWfGszjZNxZdwt_vgHo=w240-h480-rw"
@@ -128,9 +127,6 @@ function read_name_member() {
         })
     })
 }
-
-
-
 function read_cards() {
 
     fetch('/members2').then((res) => res.json()).then((data) => {
@@ -180,10 +176,10 @@ function read_cards() {
                 <div>
                   <div class="img_box1">
                     <img id="u_url"
-                      src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                      src="img수정등록" />
                   </div>
                   <div class="img_url1">
-                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value="img수정등록"/>
                     <button id="u_img_btn" style="width: 90px">
                       등록하기
                     </button>
@@ -192,23 +188,23 @@ function read_cards() {
                 <ul class="check_box">
                   <li>
                     <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="m_name" />
+                    <input type="text" id="u_name" name="m_name" value="이름수정넣기"/>
                   </li>
                   <li>
                     <label for="u_mbti">MBTI</label>
-                    <input type="text" id="u_mbti" name="m_mbti" />
+                    <input type="text" id="u_mbti" name="m_mbti" value="mbti수정넣기"/>
                   </li>
                   <li>
                     <label for="u_role">역할</label>
-                    <input type="text" id="u_role" name="m_role" />
+                    <input type="text" id="u_role" name="m_role"value="열할수정넣기" />
                   </li>
                   <li>
-                    <label for="u_address">사는 지역</label>
-                    <input type="text" id="u_address" name="m_address" />
+                    <label for="s_address">주소</label>
+                      <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly value="주소수정넣기"/>
                   </li>
                   <li>
                     <label for="u_comment">자기소개</label>
-                    <textarea id="u_comment"></textarea>
+                    <textarea id="u_comment" >코멘드수정넣기</textarea>
                   </li>
                 </ul>
                 <div id="ud-btn">
@@ -253,10 +249,10 @@ function read_cards() {
                         <div>
                           <div class="img_box">
                             <img id="s_url"
-                              src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                              src="img넣기" />
                           </div>
                           <div class="img_url">
-                            <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                            <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px"  />
                             <button id="s_img_btn">등록하기</button>
                           </div>
                         </div>
@@ -275,8 +271,9 @@ function read_cards() {
                               <input type="text" id="s_role" name="m_role" />
                             </li>
                             <li>
-                              <label for="s_address">사는 지역</label>
-                              <input type="text" id="s_address" name="m_address" />
+                              <label for="s_address">주소</label>
+                                <input type="text" id="s_address2" name="m_address" onclick="addressAPI2()" readonly />
+
                             </li>
                             <li>
                               <label for="s_comment">자기소개</label>
@@ -299,7 +296,6 @@ function read_cards() {
         document.getElementById('card-list').insertAdjacentHTML("beforeend",temp_html)
     })
 }
-
 function moveToTop() {
     document.body.scrollIntoView({ behavior: "smooth" });
   };

@@ -86,14 +86,11 @@
           <div class="col">
             <div class="card">
               <img
-                src="https://i.namu.wiki/i/tP8085P4nzY3gjHUR8YmHPX-YDeNiywu6b9SON_yLHXNleJ1-nAJcWzR0LJv5h3ji4z6oCvTga391JqyoUyfBNg0Crr6GdDkNF1m_dWl-W7blWu8BBgZ_IiyAk-tSWLkmdBhsfYqPHag_jUOBEql-g.webp"
+                src="${image}"
                 class="card-img-top" alt="..." />
               <div class="card-body">
-                <p class="card-title">배찌</p>
-                <p class="card-text">
-                  잠깐!!! 나 지금 엄청 배고프고, 집에 가고 싶은데... 너
-                  때문에... 모드레드... 나 화났어!!
-                </p>
+                <p class="card-title">${name}</p>
+                <p class="card-text">${comment}</p>
               </div>
             </div>
           </div>
@@ -102,11 +99,11 @@
           <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
             <div class="card">
               <img
-                src="https://i.namu.wiki/i/YScD-u-YnYBxbBW89uFtpXZhwiT0MTa_RThIDe3VBSNGZKPFS0rKsazb50pmQwC_N9paubYMCzQ33X4MKo_0pnJlX4zWuuvxXJfnYYI7be5xH5uIrki2iJquPLVwvNGrlZQEpvRqwfhGaCY7CYG-Zg.webp"
+                src="${image}"
                 class="card-img-top" alt="..." />
               <div class="card-body">
-                <p class="card-title">다오</p>
-                <p class="card-text">"잘 봐둬! 최고의 레이스가 될거야!"</p>
+                <p class="card-title">${name}</p>
+                <p class="card-text">${comment}</p>
               </div>
             </div>
           </button>
@@ -128,10 +125,10 @@
                     <div>
                       <div class="img_box1">
                         <img id="u_url"
-                          src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                          src="img수정등록" />
                       </div>
                       <div class="img_url1">
-                        <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                        <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value="img수정등록"/>
                         <button id="u_img_btn" style="width: 90px">
                           등록하기
                         </button>
@@ -140,23 +137,23 @@
                     <ul class="check_box">
                       <li>
                         <label for="u_name">이름</label>
-                        <input type="text" id="u_name" name="m_name" />
+                        <input type="text" id="u_name" name="m_name" value="이름수정넣기"/>
                       </li>
                       <li>
                         <label for="u_mbti">MBTI</label>
-                        <input type="text" id="u_mbti" name="m_mbti" />
+                        <input type="text" id="u_mbti" name="m_mbti" value="mbti수정넣기"/>
                       </li>
                       <li>
                         <label for="u_role">역할</label>
-                        <input type="text" id="u_role" name="m_role" />
+                        <input type="text" id="u_role" name="m_role"value="열할수정넣기" />
                       </li>
                       <li>
                         <label for="s_address">주소</label>
-                          <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly />
+                          <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly value="주소수정넣기"/>
                       </li>
                       <li>
                         <label for="u_comment">자기소개</label>
-                        <textarea id="u_comment"></textarea>
+                        <textarea id="u_comment" >코멘드수정넣기</textarea>
                       </li>
                     </ul>
                     <div id="ud-btn">
@@ -201,10 +198,10 @@
                             <div>
                               <div class="img_box">
                                 <img id="s_url"
-                                  src="https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg" />
+                                  src="img넣기" />
                               </div>
                               <div class="img_url">
-                                <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px" />
+                                <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px"  />
                                 <button id="s_img_btn">등록하기</button>
                               </div>
                             </div>
