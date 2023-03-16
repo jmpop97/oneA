@@ -377,5 +377,6 @@ function read_cards() {
 };
 
 function moveToTop() {
-  console.log("moveToTop()")  document.body.scrollIntoView({ behavior: "smooth" });
+  console.log("moveToTop()");
+  document.body.scrollIntoView({ behavior: "smooth" });
 };
