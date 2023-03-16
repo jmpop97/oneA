@@ -35,7 +35,7 @@ form {
   display: inline;
   height: 250px;
   width: 400px;
-  margin-left: 45px;
+  margin-left: 1px;
 }
 
 .check_box {
@@ -55,6 +55,7 @@ form {
 #u_name {
   max-width: 130px;
   max-height: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -81,6 +82,7 @@ form {
 
 #u_comment,
 #s_comment {
+  resize: none;
   width: 90%;
   max-width: 450px;
   height: 75%;
@@ -92,7 +94,7 @@ form {
   width: 80px;
   height: 40px;
   margin-right: 50%;
-  margin-top: 10px;
+  margin-top: 35px;
   float: right;
   border: 1px solid black;
   border-radius: 4px;
@@ -145,7 +147,7 @@ form {
   display: inline;
   height: 250px;
   width: 400px;
-  margin-left: 45px;
+  margin-left: 1px;
 }
 
 .check_box1 {

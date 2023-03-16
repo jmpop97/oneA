@@ -116,62 +116,59 @@ function read_member(id) {
     let address = a['m_address']
     let comment = a['m_comment']
     let temp_html = `
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel1">
-                자기소개
-              </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- 이미지등록 -->
-            <div class="modal-body">
-              <h3 style="margin-left: 8%">이미지 등록</h3>
-              <!-- 정보입력 -->
-              <form action="/">
-                <div>
-                  <div class="img_box1" id="input_img">
-                    <img id="u_url"
-                      src="${image}">
-                  </div>
-                  <div class="img_url1">
-                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value="${image}">
-                    <button id="u_img_btn"   style="width: 90px">
-                      등록하기
-                    </button>
-                  </div>
-                </div>
-                <ul class="check_box">
-                  <li>
-                    <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="m_name" value="${name}">
-                  </li>
-                  <li>
-                    <label for="u_mbti">MBTI</label>
-                    <input type="text" id="u_mbti" name="m_mbti" value="${mbti}">
-                  </li>
-                  <li>
-                    <label for="u_role">역할</label>
-                    <input type="text" id="u_role" name="m_role" value="${role}" />
-                  </li>
-                  <li>
-                    <label for="u_address">주소</label>
-                      <input type="text" id="u_address" name="m_address" onclick="addressAPI2()" value="${address}" readonly />
-                  </li>
-                  <li>
-                    <label for="u_comment">자기소개</label>
-                    <textarea id="u_comment" >${comment}</textarea>
-                  </li>
-                </ul>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel1">
+              자기소개
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- 이미지등록 -->
+          <div class="modal-body">
+            
+            <!-- 정보입력 -->
+            <form action="/">
+              <div>
+
+              </div>
+              <ul class="check_box">
+                <li>
+                <label for="u_img">프로필사진url</label>
+                <input type="text" id="u_img" name="m_img" value="${image}">
+                </li>
+                <li>
+                  <label for="u_name">이름</label>
+                  <input type="text" id="u_name" name="m_name" value="${name}">
+                </li>
+                <li>
+                  <label for="u_mbti">MBTI</label>
+                  <input type="text" id="u_mbti" name="m_mbti" value="${mbti}">
+                </li>
+                <li>
+                  <label for="u_role">역할</label>
+                  <input type="text" id="u_role" name="m_role" value="${role}" />
+                </li>
+                <li>
+                  <label for="u_address">주소</label>
+                    <input type="text" id="u_address" name="m_address" onclick="addressAPI2()" value="${address}" readonly />
+                </li>
+                <li>
+                  <label for="u_comment">자기소개</label><br>
+                  <textarea id="u_comment" >${comment}</textarea>
+                </li>
+
                 <div id="ud-btn">
-                  <button id="u_btn" onclick="update_member('${m_id}')">수정하기</button>
-                  <button id="d_btn" onclick="delete_member('${m_id}')">삭제하기</button>
-                </div>
-              </form>
-            </div>
+                <button id="u_btn" onclick="update_member('${m_id}')">수정하기</button>
+                <button id="d_btn" onclick="delete_member('${m_id}')">삭제하기</button>
+              </div>
+              </ul>
+
+            </form>
           </div>
         </div>
-      `
+      </div>
+    `
     document.getElementById('exampleModal1').insertAdjacentHTML("beforeend", temp_html)
     console.log(document.getElementById('u_comment').value)
   })
@@ -310,7 +307,7 @@ function read_cards() {
           data-bs-target="#exampleModal" style="width: 300px; height: 450px; font-size: 150px">
           +
         </button>
-
+​
         <!-- 헤드부분 -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -322,27 +319,23 @@ function read_cards() {
                 </h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-
-
+​
+​
               <!-- 이미지 등록 -->
               <div class="modal-body">
                 <div class="user_wrap">
-                  <h2 style="margin-left: 8%">이미지 등록</h2>
 
+​
                   <!-- 정보입력 -->
                   <form action="/" >
-                    <div>
-                      <div class="img_box">
-                        <img id="s_url"
-                          src="img넣기" />
-                      </div>
-                      <div class="img_url">
-                        <input type="text" id="s_img" placeholder="url을 넣어주세요" style="width: 300px"  />
-                        <button id="s_img_btn">등록하기</button>
-                      </div>
+
+​
                     </div>
                     <div class="check_box">
                       <ul>
+                        <label for="s_img">프로필사진url</label>
+                        <input type="text" id="s_img" name="m_img" />
+                        </li>
                         <li>
                           <label for="s_name">이름</label>
                           <input type="text" id="s_name" name="m_name" />
@@ -358,10 +351,10 @@ function read_cards() {
                         <li>
                           <label for="s_address">주소</label>
                             <input type="text" id="s_address" name="m_address" onclick="addressAPI1()" readonly />
-
+​
                         </li>
                         <li>
-                          <label for="s_comment">자기소개</label>
+                          <label for="s_comment">자기소개</label><br>
                           <textarea id="s_comment"></textarea>
                         </li>
                         <button id="s_btn" onclick="save_member()">등록하기</button>
@@ -374,7 +367,7 @@ function read_cards() {
           </div>
         </div>
       </div>
-
+​
       <!-- 수정, 삭제하기 -->
     </div>
   </div>`
