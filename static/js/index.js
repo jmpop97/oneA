@@ -114,14 +114,14 @@ function read_member(id) {
             <div class="modal-body">
               <h3 style="margin-left: 8%">이미지 등록</h3>
               <!-- 정보입력 -->
-              <form action="/" method="GET">
+              <form action="/">
                 <div>
                   <div class="img_box1">
                     <img id="u_url"
-                      src=${image} />
+                      src=${image}>
                   </div>
                   <div class="img_url1">
-                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value=${image}/>
+                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value=${image}>
                     <button id="u_img_btn" style="width: 90px">
                       등록하기
                     </button>
@@ -238,7 +238,7 @@ function read_cards() {
               <div class="modal-body">
                 <h3 style="margin-left: 8%">이미지 등록</h3>
                 <!-- 정보입력 -->
-                <form action="/" method="GET">
+                <form action="/">
                   <div>
                     <div class="img_box1">
                       <img id="u_url"
@@ -314,7 +314,7 @@ function read_cards() {
                   <h2 style="margin-left: 8%">이미지 등록</h2>
 
                   <!-- 정보입력 -->
-                  <form action="/" method="POST">
+                  <form action="/" >
                     <div>
                       <div class="img_box">
                         <img id="s_url"
