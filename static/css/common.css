@@ -9,10 +9,10 @@
 .content2-container {
   width: 90%;
   margin: 0 auto;
-  
+
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  overflow: hidden;    
+  overflow: hidden;
 
 }
 
@@ -39,11 +39,9 @@
 .card-body {
   margin: 0 auto;
   width: 300px;
-  height: 150px;
 }
 
 .card-body2 {
-  margin: 0 auto;
   width: 300px;
   height: 450px;
 
@@ -52,48 +50,66 @@
   align-items: center;
 }
 
-.card-title {
-  font-family: "Quicksand", sans-serif;
+.card-title-box {
   width: 250px;
-  height: 40px;
-  font-size: 2rem;
-  
-  color: #F9F7F0;
+  height: 50px;
   background-color: #072A40;
-  
-  margin: 0 auto;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+.card-title {
+  font-family: "Quicksand", sans-serif;
+  color: #F9F7F0;
+  
+  height: 40px;
+  font-size: 1.4rem;
+  text-align: center;
+  
+  display: inline-block;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+}
+
+.card-text-box {
+  width: 250px;
+  height: 70px;  
+  background-color: #18B7BE;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-text {
-  width: 250px;
-  height: 70px;
-  color: #F9F7F0;
   background-color: #18B7BE;
-
-  margin: 0 auto;
-  padding-top: 0.5rem;
+  color: #F9F7F0;
+  
   font-size: 0.8rem;
   text-align: center;
 
-  overflow: hidden;
-  word-wrap: break-word;
+  display: inline-block;
   white-space: normal;
-  line-height: 1.2;
-  text-align: center;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
 }
 
 .wrapper {
