@@ -1,11 +1,12 @@
-read_cards()
+read_cards();
+
 function save_member() {
   console.log("save_member()")
-  let m_img = "A"
+  let m_img = document.getElementById("s_img").value
   let m_name = document.getElementById("s_name").value
   let m_mbti = document.getElementById("s_mbti").value
   let m_role = document.getElementById("s_role").value
-  let m_address = document.getElementById("s_address1").value
+  let m_address = document.getElementById("s_address").value
   let m_comment = document.getElementById("s_comment").value
   /*
  let m_img = document.getElementById("s_img").value
@@ -29,7 +30,8 @@ function save_member() {
     .then((data) => {
       alert(data['msg']);
     });
-}
+};
+
 function update_member(id) {
   console.log("update_member(id)")
   let m_id = id
@@ -37,7 +39,7 @@ function update_member(id) {
   let m_name = document.getElementById("u_name").value
   let m_mbti = document.getElementById("u_mbti").value
   let m_role = document.getElementById("u_role").value
-  let m_address = "수정전"
+  let m_address = document.getElementById("u_address").value
   let m_comment = document.getElementById("u_comment").value
   /*
   let m_id = document.getElementById("u_id").value
@@ -61,7 +63,8 @@ function update_member(id) {
     alert(data['msg']);
   })
 
-}
+};
+
 function delete_member(id) {
   console.log("delete_member(id)")
   let m_id = id
@@ -72,7 +75,8 @@ function delete_member(id) {
   fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
     alert(data['msg']);
   })
-}
+};
+
 function read_members() {
   console.log("read_members")
   fetch('/members').then((res) => res.json()).then((data) => {
@@ -96,7 +100,8 @@ function read_members() {
     })
 
   })
-}
+};
+
 function read_member(id) {
   console.log("read_member(id)")
   let m_id = id
@@ -108,6 +113,7 @@ function read_member(id) {
     let name = a['m_name']
     let mbti = a['m_mbti']
     let role = a['m_role']
+    let address = a['m_address']
     let comment = a['m_comment']
     let temp_html = `
         <div class="modal-dialog">
@@ -126,10 +132,10 @@ function read_member(id) {
                 <div>
                   <div class="img_box1" id="input_img">
                     <img id="u_url"
-                      src=${image}>
+                      src="${image}">
                   </div>
                   <div class="img_url1">
-                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value=${image}>
+                    <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value="${image}">
                     <button id="u_img_btn"   style="width: 90px">
                       등록하기
                     </button>
@@ -138,19 +144,19 @@ function read_member(id) {
                 <ul class="check_box">
                   <li>
                     <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="m_name" value=${name}>
+                    <input type="text" id="u_name" name="m_name" value="${name}">
                   </li>
                   <li>
                     <label for="u_mbti">MBTI</label>
-                    <input type="text" id="u_mbti" name="m_mbti" value=${mbti}>
+                    <input type="text" id="u_mbti" name="m_mbti" value="${mbti}">
                   </li>
                   <li>
                     <label for="u_role">역할</label>
-                    <input type="text" id="u_role" name="m_role"value=${role} />
+                    <input type="text" id="u_role" name="m_role" value="${role}" />
                   </li>
                   <li>
-                    <label for="s_address">주소</label>
-                      <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly    />
+                    <label for="u_address">주소</label>
+                      <input type="text" id="u_address" name="m_address" onclick="addressAPI2()" value="${address}" readonly />
                   </li>
                   <li>
                     <label for="u_comment">자기소개</label>
@@ -169,7 +175,7 @@ function read_member(id) {
     document.getElementById('exampleModal1').insertAdjacentHTML("beforeend", temp_html)
     console.log(document.getElementById('u_comment').value)
   })
-}
+};
 
 function read_name_member() {
   console.log("read_name_member")
@@ -206,7 +212,8 @@ function read_name_member() {
       // $('#order-box').append(temp_html)
     })
   })
-}
+};
+
 function read_cards() {
   console.log("read_cards")
   fetch('/members2').then((res) => res.json()).then((data) => {
@@ -274,8 +281,8 @@ function read_cards() {
                       <input type="text" id="u_role" name="m_role"value="열할수정넣기" />
                     </li>
                     <li>
-                      <label for="s_address">주소</label>
-                        <input type="text" id="s_address1" name="m_address" onclick="addressAPI1()" readonly />
+                      <label for="u_address">주소</label>
+                        <input type="text" id="u_address" name="m_address" onclick="addressAPI2()" readonly />
                     </li>
                     <li>
                       <label for="u_comment">자기소개</label>
@@ -350,7 +357,7 @@ function read_cards() {
                         </li>
                         <li>
                           <label for="s_address">주소</label>
-                            <input type="text" id="s_address2" name="m_address" onclick="addressAPI2()" readonly />
+                            <input type="text" id="s_address" name="m_address" onclick="addressAPI1()" readonly />
 
                         </li>
                         <li>
@@ -375,7 +382,8 @@ function read_cards() {
 
     // console.log("+card")
   })
-}
+};
+
 function moveToTop() {
   console.log("moveToTop()")
   document.body.scrollIntoView({ behavior: "smooth" });
