@@ -32,7 +32,14 @@ function save_member() {
 }
 function update_member(id) {
   console.log("update_member(id)")
-  m_id = id
+  let m_id = id
+  let m_img = document.getElementById("u_img").value
+  let m_name = document.getElementById("u_name").value
+  let m_mbti = document.getElementById("u_mbti").value
+  let m_role = document.getElementById("u_role").value
+  let m_address = "수정전"
+  let m_comment = document.getElementById("u_comment").value
+  /*
   let m_id = document.getElementById("u_id").value
   let m_img = document.getElementById("u_img").value
   let m_name = document.getElementById("u_name").value
@@ -40,6 +47,7 @@ function update_member(id) {
   let m_role = document.getElementById("u_role").value
   let m_address = document.getElementById("u_address").value
   let m_comment = document.getElementById("u_comment").value
+  */
   let formData = new FormData();
   formData.append("m_id_give", m_id);
   formData.append("m_img_give", m_img);
@@ -116,13 +124,13 @@ function read_member(id) {
               <!-- 정보입력 -->
               <form action="/">
                 <div>
-                  <div class="img_box1">
+                  <div class="img_box1" id="input_img">
                     <img id="u_url"
                       src=${image}>
                   </div>
                   <div class="img_url1">
                     <input type="text" id="u_img" placeholder="url을 넣어주세요" style="width: 300px" value=${image}>
-                    <button id="u_img_btn" style="width: 90px">
+                    <button id="u_img_btn"   style="width: 90px">
                       등록하기
                     </button>
                   </div>
@@ -130,11 +138,11 @@ function read_member(id) {
                 <ul class="check_box">
                   <li>
                     <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="m_name" value=${name}/>
+                    <input type="text" id="u_name" name="m_name" value=${name}>
                   </li>
                   <li>
                     <label for="u_mbti">MBTI</label>
-                    <input type="text" id="u_mbti" name="m_mbti" value=${mbti}/>
+                    <input type="text" id="u_mbti" name="m_mbti" value=${mbti}>
                   </li>
                   <li>
                     <label for="u_role">역할</label>
@@ -162,6 +170,7 @@ function read_member(id) {
     console.log(document.getElementById('u_comment').value)
   })
 }
+
 function read_name_member() {
   console.log("read_name_member")
   fetch('/members').then((res) => res.json()).then((data) => {
