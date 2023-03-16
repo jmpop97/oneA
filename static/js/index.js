@@ -1,5 +1,6 @@
 read_cards()
 function save_member() {
+  console.log("save_member()")
   let m_img = document.getElementById("s_img").innerText
   let m_name =document.getElementById("s_name").innerText
   let m_mbti = "A"
@@ -30,6 +31,7 @@ function save_member() {
     });
 }
 function update_member(id) {
+  console.log("update_member(id)")
   m_id=id
   let m_id = document.getElementById("u_id").innerText
   let m_img = document.getElementById("u_img").innerText
@@ -54,6 +56,7 @@ function update_member(id) {
   
 }
 function delete_member(id) {
+  console.log("delete_member(id)")
   let m_id = id
 
   let formData = new FormData();
@@ -64,7 +67,7 @@ function delete_member(id) {
   })
 }
 function read_members() {
-
+  console.log("read_members")
   fetch('/members').then((res) => res.json()).then((data) => {
     let rows = data['result']
     var test = rows
@@ -88,6 +91,7 @@ function read_members() {
   })
 }
 function read_member(id) {
+  console.log("read_member(id)")
   let m_id = id
   fetch_id = '/member/' + m_id;
   document.getElementById("exampleModal1").innerHTML = "";
@@ -160,6 +164,7 @@ function read_member(id) {
   })
 }
 function read_name_member() {
+  console.log("read_name_member")
   fetch('/members').then((res) => res.json()).then((data) => {
     let rows = data['result']
 
@@ -195,7 +200,7 @@ function read_name_member() {
   })
 }
 function read_cards() {
-
+  console.log("read_cards")
   fetch('/members2').then((res) => res.json()).then((data) => {
     let rows = data['result']
 
@@ -364,5 +369,6 @@ function read_cards() {
   })
 }
 function moveToTop() {
+  console.log("moveToTop()")
   document.body.scrollIntoView({ behavior: "smooth" });
 };
