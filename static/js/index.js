@@ -9,13 +9,13 @@ function save_member() {
   let m_address = document.getElementById("s_address").value
   let m_comment = document.getElementById("s_comment").value
   /*
- let m_img = document.getElementById("s_img").value
- let m_name = document.getElementById("s_name").value
- let m_mbti = document.getElementById("s_mbti").value
- let m_role = document.getElementById("s_role").value
- let m_address = document.getElementById("s_adress").value
- let m_comment = document.getElementById("s_comment").value
- */
+  let m_img = document.getElementById("s_img").innerText
+  let m_name = document.getElementById("s_name").innerText
+  let m_mbti = document.getElementById("s_mbti").innerText
+  let m_role = document.getElementById("s_role").innerText
+  let m_address = document.getElementById("s_adress").innerText
+  let m_comment = document.getElementById("s_comment").innerText
+  */
   let formData = new FormData();
   formData.append("m_img_give", m_img);
   formData.append("m_name_give", m_name);
@@ -28,7 +28,8 @@ function save_member() {
   fetch('/member', { method: "POST", body: formData, })
     .then((res) => res.json())
     .then((data) => {
-      alert(data['저장 완료']);
+      // alert(data['저장 완료']);
+      window.location.reload();
     });
 };
 
@@ -60,9 +61,8 @@ function update_member(id) {
   formData.append("m_comment_give", m_comment);
 
   fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
-    alert(data['수정 완료']);
+    // alert(data['수정 완료']);
   })
-
 };
 
 function delete_member(id) {
@@ -72,7 +72,7 @@ function delete_member(id) {
   let formData = new FormData();
   formData.append("m_id_give", m_id);
   fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
-    alert(data['삭제 완료']);
+    alert(data['msg']);
   })
 };
 
@@ -169,7 +169,6 @@ function read_member(id) {
       </div>
     `
     document.getElementById('exampleModal1').insertAdjacentHTML("beforeend", temp_html)
-
   })
 };
 
@@ -231,8 +230,14 @@ function read_cards() {
                 src="${image}"
                 class="card-img-top" alt="..." />
               <div class="card-body">
-                <p class="card-title">${name}</p>
-                <p class="card-text">${comment}</p>
+                <div class="card-title-box">
+                  <div class="card-title">${name}
+                  </div>
+                </div>
+                <div class="card-text-box">
+                  <div class="card-text">${comment}
+                  </div>
+                </div>
               </div>
             </div>
           </button>

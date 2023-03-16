@@ -46,8 +46,8 @@ header {
 }
 
 .intro img {
-    width: 300px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     margin: auto;
     object-fit: cover;
 }
@@ -114,10 +114,24 @@ ul {
     .intro {
         flex-direction: column;
     }
+
+    .intro img {
+        width: 350px;
+        height: 370px;
+        margin: auto;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 44.75rem) {
     #intro-text {
         display: none;
+    }
+
+    .intro img {
+        width: 350px;
+        height: 370px;
+        margin: auto;
+        object-fit: cover;
     }
 }
