@@ -1,20 +1,20 @@
 read_cards()
 function save_member() {
   console.log("save_member()")
-  let m_img = document.getElementById("s_img").innerText
-  let m_name =document.getElementById("s_name").innerText
-  let m_mbti = "A"
-  let m_role = "A"
-  let m_address = document.getElementById("s_adress").innerText
-  let m_comment = document.getElementById("s_comment").innerText
+  let m_img = "A"
+  let m_name = document.getElementById("s_name").value
+  let m_mbti = document.getElementById("s_mbti").value
+  let m_role = document.getElementById("s_role").value
+  let m_address = document.getElementById("s_address1").value
+  let m_comment = document.getElementById("s_comment").value
   /*
-  let m_img = document.getElementById("s_img").innerText
-  let m_name = document.getElementById("s_name").innerText
-  let m_mbti = document.getElementById("s_mbti").innerText
-  let m_role = document.getElementById("s_role").innerText
-  let m_address = document.getElementById("s_adress").innerText
-  let m_comment = document.getElementById("s_comment").innerText
-  */
+ let m_img = document.getElementById("s_img").value
+ let m_name = document.getElementById("s_name").value
+ let m_mbti = document.getElementById("s_mbti").value
+ let m_role = document.getElementById("s_role").value
+ let m_address = document.getElementById("s_adress").value
+ let m_comment = document.getElementById("s_comment").value
+ */
   let formData = new FormData();
   formData.append("m_img_give", m_img);
   formData.append("m_name_give", m_name);
@@ -32,15 +32,14 @@ function save_member() {
 }
 function update_member(id) {
   console.log("update_member(id)")
-  m_id=id
-  let m_id = document.getElementById("u_id").innerText
-  let m_img = document.getElementById("u_img").innerText
-  let m_name = document.getElementById("u_name").innerText
-  let m_mbti = document.getElementById("u_mbti").innerText
-  let m_role = document.getElementById("u_role").innerText
-  let m_address = document.getElementById("u_address").innerText
-  let m_comment = document.getElementById("u_comment").innerText
-
+  m_id = id
+  let m_id = document.getElementById("u_id").value
+  let m_img = document.getElementById("u_img").value
+  let m_name = document.getElementById("u_name").value
+  let m_mbti = document.getElementById("u_mbti").value
+  let m_role = document.getElementById("u_role").value
+  let m_address = document.getElementById("u_address").value
+  let m_comment = document.getElementById("u_comment").value
   let formData = new FormData();
   formData.append("m_id_give", m_id);
   formData.append("m_img_give", m_img);
@@ -53,7 +52,7 @@ function update_member(id) {
   fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
     alert(data['msg']);
   })
-  
+
 }
 function delete_member(id) {
   console.log("delete_member(id)")
@@ -160,7 +159,7 @@ function read_member(id) {
         </div>
       `
     document.getElementById('exampleModal1').insertAdjacentHTML("beforeend", temp_html)
-    console.log(document.getElementById('u_comment').innerText)
+    console.log(document.getElementById('u_comment').value)
   })
 }
 function read_name_member() {
@@ -287,7 +286,7 @@ function read_cards() {
       //             $('#cards-box').append(temp_html)
       document.getElementById('card-list').insertAdjacentHTML("beforeend", temp_html)
     })
-    let temp_html=`<div class="col">
+    let temp_html = `<div class="col">
     <div class="card">
       <!-- 모달 트리거 생성하기 시작 -->
       <div class="card-body2">
@@ -363,8 +362,8 @@ function read_cards() {
       <!-- 수정, 삭제하기 -->
     </div>
   </div>`
-  document.getElementById('card-list').insertAdjacentHTML("beforeend", temp_html)
-    
+    document.getElementById('card-list').insertAdjacentHTML("beforeend", temp_html)
+
     // console.log("+card")
   })
 }
