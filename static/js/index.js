@@ -1,7 +1,7 @@
 read_cards();
 
 function save_member() {
-  console.log("save_member()")
+
   let m_img = document.getElementById("s_img").value
   let m_name = document.getElementById("s_name").value
   let m_mbti = document.getElementById("s_mbti").value
@@ -23,17 +23,17 @@ function save_member() {
   formData.append("m_role_give", m_role);
   formData.append("m_address_give", m_address);
   formData.append("m_comment_give", m_comment);
-  alert('hi')
+
 
   fetch('/member', { method: "POST", body: formData, })
     .then((res) => res.json())
     .then((data) => {
-      alert(data['msg']);
+      alert(data['저장 완료']);
     });
 };
 
 function update_member(id) {
-  console.log("update_member(id)")
+
   let m_id = id
   let m_img = document.getElementById("u_img").value
   let m_name = document.getElementById("u_name").value
@@ -58,27 +58,26 @@ function update_member(id) {
   formData.append("m_role_give", m_role);
   formData.append("m_address_give", m_address);
   formData.append("m_comment_give", m_comment);
-  alert('fix')
+
   fetch('/member', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
-    alert(data['msg']);
+    alert(data['수정 완료']);
   })
 
 };
 
 function delete_member(id) {
-  console.log("delete_member(id)")
+
   let m_id = id
 
   let formData = new FormData();
   formData.append("m_id_give", m_id);
-  alert('삭제')
   fetch('/member', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
-    alert(data['msg']);
+    alert(data['삭제 완료']);
   })
 };
 
 function read_members() {
-  console.log("read_members")
+
   fetch('/members').then((res) => res.json()).then((data) => {
     let rows = data['result']
     var test = rows
@@ -103,7 +102,7 @@ function read_members() {
 };
 
 function read_member(id) {
-  console.log("read_member(id)")
+
   let m_id = id
   fetch_id = '/member/' + m_id;
   document.getElementById("exampleModal1").innerHTML = "";
@@ -170,12 +169,12 @@ function read_member(id) {
       </div>
     `
     document.getElementById('exampleModal1').insertAdjacentHTML("beforeend", temp_html)
-    console.log(document.getElementById('u_comment').value)
+
   })
 };
 
 function read_name_member() {
-  console.log("read_name_member")
+
   fetch('/members').then((res) => res.json()).then((data) => {
     let rows = data['result']
 
@@ -191,7 +190,7 @@ function read_name_member() {
       // a must be equal to b
       return 0;
     });
-    console.log(rows)
+
     rows.forEach((a) => {
       let name = a['m_name']
       let mbti = a['m_mbti']
@@ -212,7 +211,7 @@ function read_name_member() {
 };
 
 function read_cards() {
-  console.log("read_cards")
+
   fetch('/members2').then((res) => res.json()).then((data) => {
     let rows = data['result']
 
@@ -378,6 +377,5 @@ function read_cards() {
 };
 
 function moveToTop() {
-  console.log("moveToTop()")
-  document.body.scrollIntoView({ behavior: "smooth" });
+  console.log("moveToTop()")  document.body.scrollIntoView({ behavior: "smooth" });
 };
