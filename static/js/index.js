@@ -323,9 +323,7 @@ function read_cards() {
                 </h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-​
-​
-              <!-- 이미지 등록 -->
+​              <!-- 이미지 등록 -->
               <div class="modal-body">
                 <div class="user_wrap">
 
